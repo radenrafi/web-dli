@@ -36,6 +36,7 @@ class HomeController extends Controller
     public function showArtikel($id)
     {
         $result = Artikel::find($id);
-        return view('artikel.show', ['artikel' => $result]);
+        $tanggal = $result->created_at->isoFormat('D MMMM Y');
+        return view('artikel.show', ['artikel' => $result, 'tanggal' => $tanggal]);
     }
 }

@@ -31,7 +31,7 @@
                             </div> --}}
                         </div>
                         <div class="article-user-content">
-                            <a href="#" class="article-user-title">
+                            <a href="{{ url('/artikel/'.$artikel->id) }}" class="article-user-title">
                                 {{ $artikel->judul }}
                             </a>
                             <p class="article-user-desc">
