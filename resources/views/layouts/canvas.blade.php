@@ -79,6 +79,12 @@
           </div>
         </header>
 
+        <!-- BEGIN OF page cover -->
+            <div class="hh-cover page-cover">
+                <!-- Particles as background - uncomment below to use particles/snow -->
+                {{--  <div id="particles-js" class="cover-bg pos-abs full-size bg-color" data-bgcolor="rgba(2, 3, 10, 0.7)"></div>  --}}
+            </div>
+        <!--END OF page cover -->
 
         <!-- BEGIN OF page main content -->
        <main>
