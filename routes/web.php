@@ -26,7 +26,7 @@ Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/artikel', [HomeController::class, 'indexArtikel'])->name('artikel');
 Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showArtikel');
@@ -40,4 +40,19 @@ Route::resource('/admin/about',AboutController::class)->middleware('auth');
 Route::get('/test', function ()
 {
     return view('testText');
+});
+
+
+
+
+
+
+
+
+
+
+// punya e pras
+Route::get('/researchs', function ()
+{
+    return view('researchs.edit');
 });
