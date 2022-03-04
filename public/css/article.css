@@ -1,0 +1,154 @@
+.container .article {
+  margin-top: 2em;
+}
+
+@media (min-width: 576px) {
+  .container .article {
+    margin-top: 7em;
+  }
+}
+
+.container .article .article-column .article-big-title {
+  font-size: 1em;
+  text-align: center;
+}
+
+.container .article .article-column .section-line {
+  width: 200px;
+  height: 4px;
+  background-color: grey;
+  margin: 10px auto;
+  margin-bottom: 2em;
+  display: block;
+  border-radius: 0.5em;
+  opacity: 0.5;
+  transition: 2s;
+}
+
+.container .article .article-column .section-line:hover {
+  transition: 1s;
+  width: 300px;
+  height: 4px;
+  background-color: white;
+}
+
+.container .article .article-column .article-column-card {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.container .article .article-column .article-column-card .article-user-img {
+  height: 150px;
+  width: 200px;
+}
+
+.container .article .article-column .article-column-card .article-user-header {
+  opacity: 0.8;
+  margin-bottom: .3em;
+}
+
+.container .article .article-column .article-column-card .article-user-header .article-user-header-date {
+  background-color: #FFEBCE;
+  border-radius: .5em;
+  display: block;
+  text-align: center;
+  color: #1d1d1d;
+}
+
+.container .article .article-column .article-column-card .article-user-content .article-user-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: white;
+}
+
+.container .article .article-column .article-column-card .label .article-user-label {
+  padding: .2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: .2rem;
+  background-color: #ffffff00;
+  border-color: white;
+  border: 1px solid white;
+  border-radius: 1rem;
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+
+.container .article .article-column .article-column-card .article-card-line {
+  width: 100%;
+  height: 2px;
+  background-color: grey;
+  margin: 10px auto;
+  display: block;
+  border-radius: 0.5em;
+  opacity: 0.5;
+}
+
+.container .article .article-column .label .article-user-label {
+  padding: .2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: .2rem;
+  background-color: #ffffff00;
+  border-color: white;
+  border: 1px solid white;
+  border-radius: 1rem;
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+
+.container .article .article-column .article-popular-post {
+  background-color: #915d5d00;
+  border: none;
+}
+
+.container .article .article-column .article-popular-post:hover {
+  text-decoration: none;
+}
+
+.container .article .article-column .article-popular-post .article-pp-row {
+  margin-bottom: .5em;
+}
+
+.container .article .article-column .article-popular-post .article-pp-row:hover {
+  color: white;
+}
+
+.container .article .article-column .article-popular-post .article-pp-row .article-popular-img {
+  height: 70px;
+  width: 70px;
+  border-radius: .5em;
+}
+
+.container .article .article-column .article-popular-post .article-pp-row .article-popular-title {
+  color: white;
+  font-weight: bolder;
+}
+
+.container .article .article-title {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.container .article .article-info {
+  opacity: 0.8;
+  margin-bottom: .3em;
+}
+
+.container .article .article-info .article-info-date {
+  color: white;
+  font-style: italic;
+}
+
+.container .article .content .article-content-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.container .article .content .article-content-txt {
+  font-size: 1.2rem;
+}

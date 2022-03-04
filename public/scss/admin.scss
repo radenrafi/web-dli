@@ -1,0 +1,7 @@
+.form{
+    .btn-primary{
+        margin-top: 1em ;
+        @include tombol();
+        background-color: $secondaryColor;
+    }
+}

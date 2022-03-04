@@ -1,0 +1,128 @@
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-Black.ttf');
+    src: url('Overpass-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-BlackItalic.ttf');
+    src: url('Overpass-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-Bold.ttf');
+    src: url('Overpass-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-BoldItalic.ttf');
+    src: url('Overpass-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-ExtraBold.ttf');
+    src: url('Overpass-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-ExtraBoldItalic.ttf');
+    src: url('Overpass-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-ExtraLight.ttf');
+    src: url('Overpass-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-ExtraLightItalic.ttf');
+    src: url('Overpass-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-Italic.ttf');
+    src: url('Overpass-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-Light.ttf');
+    src: url('Overpass-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-LightItalic.ttf');
+    src: url('Overpass-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-Regular.ttf');
+    src: url('Overpass-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-SemiBold.ttf');
+    src: url('Overpass-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-SemiBoldItalic.ttf');
+    src: url('Overpass-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-Thin.ttf');
+    src: url('Overpass-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('Overpass-ThinItalic.ttf');
+    src: url('Overpass-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}

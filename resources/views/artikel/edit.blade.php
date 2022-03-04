@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit Artikel</h1>
-    <form action="{{url('/artikel/'.$artikel->id)}}" method="POST" enctype="multipart/form-data" class="form">
+    <form action="{{url('/admin/artikel/'.$artikel->id)}}" method="POST" enctype="multipart/form-data" class="form">
         @method('PATCH')
         <div class="form-group">
             <label for="gambar">Gambar Artikel</label>

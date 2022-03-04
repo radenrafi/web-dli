@@ -1,0 +1,61 @@
+// variable
+$primaryColor: #D1335B;
+$secondaryColor: #3f4b62;
+$textWhite: #FFEBCE;
+$textBlack: #1d1d1d;
+
+main{
+    .article{
+        .article-title{
+            margin-bottom: 1em;
+        }
+        .article-column{
+            // margin-left: 1em;
+            .article-card{
+                // margin: 25px;
+                border-radius: 1em;
+                box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);
+                &:hover{
+                box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.75)
+                }
+                .article-card-img{
+                    border-radius: 1.2em;
+                    border-bottom-right-radius: 0em;
+                    border-bottom-left-radius: 0em;
+                }
+                .article-card-body{
+                    .article-card-title{
+                        color: $textBlack;
+                        font-weight: bold;
+                    }
+                    .article-card-text{
+                        color: $textBlack;
+                    }
+                    a{
+                        // text-decoration: underline;
+                        margin-bottom: 1em;
+
+                    }
+                }
+
+            }
+        }
+        .article-button{
+            a{
+                svg{
+                    color: rgba(255, 255, 255, 0.25);
+                    &:hover {
+                        color: $textWhite;
+                    }
+                }
+                span{
+                    color: rgba(255, 255, 255, 0.25);
+                }
+                text-decoration: none;
+            }
+
+        }
+    }
+}
+
+

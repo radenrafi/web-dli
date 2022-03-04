@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
 
 class ArtikelController extends Controller
 {
@@ -39,6 +41,7 @@ class ArtikelController extends Controller
         $validateData = $request->validate([
             'judul' => 'required|max:100',
             'isi' => 'required',
+            'kategori' => 'required',
             'gambar' => 'required|file|image|max:1000'
         ]);
         $extGambar = $request->gambar->getClientOriginalExtension();
@@ -47,10 +50,12 @@ class ArtikelController extends Controller
         $artikel = new Artikel();
         $artikel->judul = $validateData['judul'];
         $artikel->isi = $validateData['isi'];
+        $artikel->deskripsi = Str::substr($validateData['isi'], 0, 50);
+        $artikel->kategori = $validateData['kategori'];
         $artikel->gambar = $pathGambar;
         $artikel->save();
 
-        return redirect()->route('artikel.create')->with('pesan', "Artikel Berhasil Ditambah");
+        return redirect()->route('artikel.index')->with('pesan', "Artikel Berhasil Ditambah");
     }
 
     /**
@@ -61,7 +66,8 @@ class ArtikelController extends Controller
      */
     public function show(Artikel $artikel)
     {
-        return view('artikel.show', ['artikel' => $artikel]);
+        $tanggal = $artikel->created_at->isoFormat('D MMMM Y');
+        return view('artikel.show', ['artikel' => $artikel, 'tanggal' => $tanggal]);
     }
 
     /**
@@ -87,6 +93,7 @@ class ArtikelController extends Controller
         $validateData = $request->validate([
             'judul' => 'required|max:100',
             'isi' => 'required',
+            'kategori' => 'required',
             'gambar' => 'required|file|image|max:1000'
         ]);
 
@@ -95,9 +102,10 @@ class ArtikelController extends Controller
         $artikel = Artikel::find($artikel->id);
         $artikel->judul = $validateData['judul'];
         $artikel->isi = $validateData['isi'];
+        $artikel->kategori = $validateData['kategori'];
         $artikel->gambar = $pathGambar;
         $artikel->save();
-        return redirect('/artikel/'.$artikel->id)->with('pesan', "Artikel Berhasil Diganti");
+        return redirect('/artikel/'.$artikel->id)->with('pesan', "Artikel Berhasil Diedit");
     }
 
     /**
