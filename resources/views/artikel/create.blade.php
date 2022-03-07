@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Buat Artikel')
 
@@ -64,7 +64,7 @@
             <label for="isi">Isi</label>
             <textarea name="isi" id="isi" rows="40" cols="30" class="form-control">{{old('isi')}}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary mb-5" value="submit">Daftar</button>
+        <button type="submit" class="btn btn-primary mt-3" value="submit">Daftar</button>
         @csrf
     </form>
 </main>
