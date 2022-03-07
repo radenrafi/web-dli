@@ -5,6 +5,7 @@ use App\Http\Controllers\admin;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\App;
 
@@ -24,11 +25,13 @@ use Illuminate\Support\Facades\App;
 // });
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/artikel', [HomeController::class, 'indexArtikel'])->name('artikel');
+Route::get('/artikel/kategori/{kategori}', [HomeController::class, 'kategoriArtikel']);
 Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showArtikel');
 
 Route::get('/admin', [admin::class, 'index'])->name('admin')->middleware('auth');
