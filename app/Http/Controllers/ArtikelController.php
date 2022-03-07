@@ -53,6 +53,7 @@ class ArtikelController extends Controller
         $artikel->deskripsi = Str::substr($validateData['isi'], 0, 50);
         $artikel->kategori = $validateData['kategori'];
         $artikel->gambar = $pathGambar;
+        $artikel->klik = 0;
         $artikel->save();
 
         return redirect()->route('artikel.index')->with('pesan', "Artikel Berhasil Ditambah");

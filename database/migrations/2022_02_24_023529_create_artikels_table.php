@@ -20,6 +20,7 @@ return new class extends Migration
             $table->char('deskripsi', 100);
             $table->text('isi');
             $table->string('gambar');
+            $table->unsignedInteger('klik');
             $table->timestamps();
         });
     }

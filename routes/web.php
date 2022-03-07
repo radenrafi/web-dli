@@ -31,6 +31,7 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/artikel', [HomeController::class, 'indexArtikel'])->name('artikel');
+Route::get('/artikel/kategori/{kategori}', [HomeController::class, 'kategoriArtikel']);
 Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showArtikel');
 
 Route::get('/admin', [admin::class, 'index'])->name('admin')->middleware('auth');
