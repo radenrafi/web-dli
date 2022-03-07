@@ -43,7 +43,7 @@ class AboutController extends Controller
         $about->isi = $validateData['isi'];
         $about->save();
 
-        return redirect()->route('about.create')->with('pesan', "Artikel Berhasil Ditambah");
+        return redirect('/admin/about')->with('pesan', "About Berhasil Ditambah");
     }
 
     /**

@@ -14,7 +14,8 @@ class TargetController extends Controller
      */
     public function index()
     {
-        //
+        $targets = Target::all();
+        return view('target.index', ['targets' => $targets]);
     }
 
     /**
@@ -24,7 +25,7 @@ class TargetController extends Controller
      */
     public function create()
     {
-        //
+        return view('target.create');
     }
 
     /**
@@ -35,7 +36,14 @@ class TargetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'isi' => 'required',
+        ]);
+        $target = new Target();
+        $target->isi = $validateData['isi'];
+        $target->save();
+
+        return redirect('/admin/target')->with('pesan', "Target Berhasil Ditambah");
     }
 
     /**
@@ -57,7 +65,7 @@ class TargetController extends Controller
      */
     public function edit(Target $target)
     {
-        //
+        return view('target.edit', ['target' => $target]);
     }
 
     /**
@@ -69,7 +77,14 @@ class TargetController extends Controller
      */
     public function update(Request $request, Target $target)
     {
-        //
+        $validateData = $request->validate([
+            'isi' => 'required',
+        ]);
+        $target = Target::find($target->id);
+        $target->isi = $validateData['isi'];
+        $target->save();
+
+        return redirect('admin/target')->with('pesan', "Target Berhasil Diedit");
     }
 
     /**
@@ -80,6 +95,7 @@ class TargetController extends Controller
      */
     public function destroy(Target $target)
     {
-        //
+        $target->delete();
+        return redirect('admin/target')->with('pesan', "Target Berhasil Dihapus");
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -36,8 +37,9 @@ Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showA
 
 Route::get('/admin', [admin::class, 'index'])->name('admin')->middleware('auth');
 
-Route::resource('/admin/artikel',ArtikelController::class)->middleware('auth');
-Route::resource('/admin/about',AboutController::class)->middleware('auth');
+Route::resource('/admin/artikel', ArtikelController::class)->middleware('auth');
+Route::resource('/admin/about', AboutController::class)->middleware('auth');
+Route::resource('/admin/target', TargetController::class)->middleware('auth');
 
 
 Route::get('/test', function ()
@@ -46,12 +48,20 @@ Route::get('/test', function ()
 });
 
 
+
+
+
+
+
+
+
+
 // punya e pras
-Route::get('/research', function ()
-{
-    return view('research.edit');
-});
-Route::get('/roadmap', function ()
-{
-    return view('roadmap.edit');
-});
+// Route::get('/researchs',// punya e pras
+// Route::get('/research', function ()
+// {
+//     return view('research.edit');
+// });
+// Route::get('/roadmap', function ()
+// {
+//     return view('roadmap.edit');

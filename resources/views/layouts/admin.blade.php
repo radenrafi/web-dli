@@ -25,7 +25,7 @@
         {{--  begin navbar atas  --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/admin') }}">
                     DLI Admin
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -103,7 +103,7 @@
                                 </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="target_ae">
-                                <a href="#target_ae">
+                                <a href="{{ url('/admin/target') }}">
                                     <i class="icon ion-checkmark-circled bg-dark"></i>
                                     <span class="txt">Target</span>
                                 </a>

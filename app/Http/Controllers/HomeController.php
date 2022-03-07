@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function welcome()
     {
-        $abouts = About::latest()->limit(3)->get();
+        $abouts = About::latest()->limit(1)->get();
         $artikels = Artikel::latest()->limit(2)->get();
         return view('welcome', ['abouts' => $abouts, 'artikels' => $artikels]);
     }

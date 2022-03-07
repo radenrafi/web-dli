@@ -269,22 +269,10 @@
               <div class="section-content reduced anim text-center">
                 <!-- title and description -->
                 <div class="title-desc anim-3">
-                  <p>
-                    Pusat Unggulan Ipteks Perguruan Tinggi (PUI-PT) Disruptive Learning Innovation Universitas Negeri Malang
-                    mengembangkan inovasi di bidang pembelajaran cerdas dengan fokus penelitian transformasi digital pada
-                    ekosistem Pendidikan, baik di kampus, sekolah, maupun masyarakat guna meningkatkan kualitas layanan
-                    Pendidikan di Indonesia.
-                  </p>
-                  <p>
-                    Pengembangan Riset Unggulan DLI dengan pilar-pilar teknologi disruptif, melalui inovasi media dan aplikasi
-                    pembelajaran berbasis <em>Artificial Intelligence</em> yang diterapkan pada sistem <em>smart
-                      learning</em>, telah dimanfaatkan secara luas oleh masyarakat dalam memperoleh kemudahan akses
-                    Pendidikan secara digital.
-                  </p>
-                  <p>
-                    Penemuan dan Implementasi produk hasil riset DLI secara global diharapkan dapat mendukung kegiatan
-                    pembelajaran inovatif dan unggul secara berkelanjutan.
-                  </p>
+                @foreach ($abouts as $about)
+                {!! $about->isi !!}
+                @endforeach
+
                 </div>
 
               </div>
