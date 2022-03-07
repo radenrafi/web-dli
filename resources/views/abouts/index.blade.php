@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'About')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-11">
             <a class="btn btn-primary" href="{{ url('/admin/about/create') }}" role="button">Tambah About</a>
             <table class="table table-striped">
                 <thead>

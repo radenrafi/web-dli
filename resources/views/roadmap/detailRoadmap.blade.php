@@ -142,32 +142,11 @@
               <div class="row justify-content-center">
                 <!-- img-frame-normal demo -->
                 <div class="col-12">
+                    {{--  gambar yang diganti --}}
                   <img src="assets/img/roadmap.png" class="img-fluid" alt="Gambar Roadmap">
                 </div>
                 <div class="col-12 mt-3">
-                  <h4 class="display-title">Local Implementation</h4>
-                  <ul class="mb-3">
-                    <li>Implementasi hasil riset pada 4 bidang fokus (OLAI, CCLP, CEBD, dan FMLA) secara lokal di wilayah Jawa Timur dan daerah lainnya.</li>
-                    <li>Komersialisasi hasil riset dengan penguatan HKI, Paten, Lisensi, dan hasil riset telah dipublikasi pada jurnal internasional bereputasi Q1/Q2.</li>
-                    <li>Pengembangan produk bisnis dengan proses inkubasi pada pusat bisnis DLI terpilih produk unggulan dengan kondisi post-profit dengan TKT minimal level 5-6.</li>
-                    <li>Terdapat kemitraan dan kerjasama industri belajar. Prototip produk secara berkelanjutan dikembangkan dalam fase teruji secara implementasi luas guna pembuatan standarisasi penggunaan produk secara validasi kelayakan mencapai 90 persen.</li>
-                  </ul>
-                  <h4 class="display-title">Global Implementation</h4>
-                  <ul class="mb-3">
-                    <li>Implementasi hasil riset pada 4 bidang fokus (OLAI, CCLP, CEBD, dan FMLA) secara nasional di Indonesia dan global, target utama Asia Tenggara.</li>
-                    <li>Layanan secara masif untuk pengguna produk DLI dengan standar operational bisnis nasional. Pengembangan produk dengan peningkatan kualitas riset dan inovasi disruptif dengan metode kecerdasan buatan dan big data.</li>
-                    <li>Didukung pula mekanisme pengembangan riset dengan TKT level 7-9 yang memiliki paten dan publikasi artikel bereputasi jurnal Q1.</li>
-                    <li>Akselerasi produk pada pusat bisnis yang dirancang sesuai model bisnis DLI berkompetensi memperoleh investment funding berskala internasional.</li>
-                    <li>Peningkatan kemitraan dengan industri pendidikan secara global dan masif guna memperluas market size produk unggulan hasil riset DLI.</li>
-                  </ul>
-                  <h4 class="display-title">Product Sustainability</h4>
-                  <ul class="mb-3">
-                    <li>Layanan dan produk riset unggulan DLI dengan tata kelola berbasis manajemen inovasi melalui Science Techno Campus (STP) menghadirkan produk DLI sebagai produk yang berkelanjutan (sustainability) dengan kualitas standar internasional serta layanan <b>one stop learning</b> berbasis smart commerce.</li>
-                    <li>Kluster produk bisnis dikembangkan secara scale up dengan target high profitable minimal produk telah mendapatkan Venture Capital Investment.</li>
-                    <li>Produktivitas ditingkatkan secara luas dan melibatkan multidisiplin di bidang sosial humaniora.</li>
-                    <li>Pendidikan dengan kemitraan Pakar (expert) internasional baik researcher maupun coach.</li>
-                    <li>Pengembangan produk difokuskan pada layanan pengguna platform smart learning yang terdistribusi pada proses belajar digital/online.</li>
-                  </ul>
+                    {{--  isinya isi deskripsi --}}
                 </div>
               </div>
 

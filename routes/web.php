@@ -46,16 +46,12 @@ Route::get('/test', function ()
 });
 
 
-
-
-
-
-
-
-
-
 // punya e pras
-Route::get('/researchs', function ()
+Route::get('/research', function ()
 {
-    return view('researchs.edit');
+    return view('research.edit');
+});
+Route::get('/roadmap', function ()
+{
+    return view('roadmap.edit');
 });
