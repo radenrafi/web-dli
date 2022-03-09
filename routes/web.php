@@ -64,7 +64,24 @@ Route::get('/admin/roadmap', function ()
 {
     return view('roadmap.edit');
 });
-Route::get('/view-roadmap', function ()
+Route::get('/admin/colaborationResearcher', function ()
 {
-    return view('roadmap.detailRoadmap');
+    return view('colaborationReaserch.index');
 });
+Route::get('/admin/tambahCR', function ()
+{
+    return view('colaborationReaserch.create');
+});
+Route::get('/admin/topResearch', function ()
+{
+    return view('topReasearch.index');
+});
+Route::get('/admin/tambahTopResearch', function ()
+{
+    return view('topReasearch.create');
+});
+Route::get('/admin/editTopResearch', function ()
+{
+    return view('topReasearch.edit');
+});
+
