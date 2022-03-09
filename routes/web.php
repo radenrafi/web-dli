@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\App;
 // });
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
-Auth::routes();
+// Auth::routes();
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
