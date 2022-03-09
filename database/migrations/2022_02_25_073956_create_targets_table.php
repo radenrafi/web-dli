@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('targets', function (Blueprint $table) {
             $table->id();
+            $table->text('isi');
             $table->timestamps();
         });
     }
