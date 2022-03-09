@@ -46,7 +46,7 @@
           <!-- End of menu icon toggler -->
 
           <!-- Begin of logo/brand -->
-          <a class="navbar-brand" href="http://dli.um.ac.id/">
+          <a class="navbar-brand" href="{{ url('/') }}">
             <span class="logo">
               <img class="light-logo" src="{{asset('/img/logo.png')}}" alt="Logo DLI">
             </span>
@@ -63,7 +63,7 @@
             <nav class="navbar-mainmenu">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="http://dli.um.ac.id/">Home
+                  <a class="nav-link" href="{{ url('/') }}">Home
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>

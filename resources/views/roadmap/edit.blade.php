@@ -3,17 +3,9 @@
 @section('content')
 <div class="container">
     <h3 class="text-center">Roadmap</h3>
-    <form action="{{ url('/admin/artikel') }}" method="POST" enctype="multipart/form-data" class="form">
-
+    <form action="{{ url('/admin/roadmap/'.$roadmap->id) }}" method="POST" enctype="multipart/form-data" class="form">
+        @method('PATCH')
         {{--  Begin form roadmap  --}}
-        <div class="form-group">
-            <label for="judul">Judul</label>
-            {{--  <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" id="judul" value="{{old('judul') ?? $roadmap->judul}}">  --}}
-            <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" id="judul" value="{{old('judul')}}">
-            @error('judul')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
         <div class="row">
             <div class="col">
                 <div class="form-group">
@@ -21,6 +13,15 @@
                     {{--  <input type="file" class="form-control  @error('gambar') is-invalid @enderror" name="gambar" id="gambar" value="{{old('gambar') ?? $roadmap->gambar}}">  --}}
                     <input type="file" class="form-control  @error('gambar') is-invalid @enderror" name="gambar" id="gambar" value="{{old('gambar')}}">
                     @error('gambar')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="tahun">Jangka Tahun</label>
+                    <input type="text" class="form-control @error('tahun') is-invalid @enderror" name="tahun" id="tahun" value="{{old('tahun')}}">
+                    @error('tahun')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>

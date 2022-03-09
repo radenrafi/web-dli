@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResearchController;
+use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\App;
 
@@ -26,72 +28,24 @@ use Illuminate\Support\Facades\App;
 // });
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
-Auth::routes();
+// Auth::routes();
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+// artikel
 Route::get('/artikel', [HomeController::class, 'indexArtikel'])->name('artikel');
 Route::get('/artikel/kategori/{kategori}', [HomeController::class, 'kategoriArtikel']);
 Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showArtikel');
 
-Route::get('/admin', [admin::class, 'index'])->name('admin')->middleware('auth');
+// roadmap
+Route::get('/roadmap', [HomeController::class, 'roadmap']);
 
+// admin
+Route::get('/admin', [admin::class, 'index'])->name('admin')->middleware('auth');
 Route::resource('/admin/artikel', ArtikelController::class)->middleware('auth');
 Route::resource('/admin/about', AboutController::class)->middleware('auth');
 Route::resource('/admin/target', TargetController::class)->middleware('auth');
-
-
-Route::get('/test', function ()
-{
-    return view('testText');
-});
-
-
-
-
-
-
-
-
-
-
-// punya e pras
-
-// {{ url('/admin/roadmap') }}
-// {{ url('/admin/research') }}
-// {{ url('/admin/target') }}
-
-Route::get('/admin/target', function ()
-{
-    return view('target.edit');
-});
-Route::get('/admin/research', function ()
-{
-    return view('research.edit');
-});
-Route::get('/admin/roadmap', function ()
-{
-    return view('roadmap.edit');
-});
-Route::get('/admin/colaborationResearcher', function ()
-{
-    return view('colaborationReaserch.index');
-});
-Route::get('/admin/tambahCR', function ()
-{
-    return view('colaborationReaserch.create');
-});
-Route::get('/admin/topResearch', function ()
-{
-    return view('topReasearch.index');
-});
-Route::get('/admin/tambahTopResearch', function ()
-{
-    return view('topReasearch.create');
-});
-Route::get('/admin/editTopResearch', function ()
-{
-    return view('topReasearch.edit');
-});
+Route::resource('/admin/research', ResearchController::class)->middleware('auth');
+Route::resource('/admin/roadmap', RoadmapController::class)->middleware('auth');
 

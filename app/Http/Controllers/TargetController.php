@@ -37,9 +37,11 @@ class TargetController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'isi' => 'required',
+            'judul' => 'required|max:100',
+            'isi' => 'required'
         ]);
         $target = new Target();
+        $target->judul = $validateData['judul'];
         $target->isi = $validateData['isi'];
         $target->save();
 
@@ -78,9 +80,11 @@ class TargetController extends Controller
     public function update(Request $request, Target $target)
     {
         $validateData = $request->validate([
-            'isi' => 'required',
+            'judul' => 'required|max:100',
+            'isi' => 'required'
         ]);
         $target = Target::find($target->id);
+        $target->judul = $validateData['judul'];
         $target->isi = $validateData['isi'];
         $target->save();
 

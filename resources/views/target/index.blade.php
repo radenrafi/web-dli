@@ -6,11 +6,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-11">
-            <a class="btn btn-primary" href="{{ url('/admin/target/create') }}" role="button">Tambah Target</a>
+            {{-- <a class="btn btn-primary" href="{{ url('/admin/target/create') }}" role="button">Tambah Target</a> --}}
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Judul</th>
                         <th>Isi</th>
                         <th>Tanggal diedit</th>
                         <th>Edit</th>
@@ -21,6 +22,7 @@
                     @forelse ($targets as $target)
                     <tr>
                         <th>{{ $loop->iteration }}</th>
+                        <th>{{ $target->judul }}</th>
                         <th>{!! $target->isi !!}</th>
                         <th>{{ $target->updated_at }}</th>
                         <th>
