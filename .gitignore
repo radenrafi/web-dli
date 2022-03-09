@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/gambar-artikel
+/public/gambar-research
 /storage/*.key
 /vendor
 .env
