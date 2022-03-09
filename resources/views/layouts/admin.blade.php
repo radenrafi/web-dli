@@ -109,7 +109,7 @@
                                 </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="research">
-                                <a href="#research">
+                                <a href="{{ url('/admin/research') }}">
                                     <i class="icon ion-ios-analytics-outline bg-dark"></i>
                                     <span class="txt">Research</span>
                                 </a>

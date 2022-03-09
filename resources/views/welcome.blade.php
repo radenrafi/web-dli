@@ -100,7 +100,7 @@
                   </a>
                 </li>
                 <li class="nav-item" data-menuanchor="target_ae">
-                  <a href="#target_ae">
+                  <a href="#target1">
                     <i class="icon ion-checkmark-circled"></i>
                     <span class="txt">Target</span>
                   </a>
@@ -288,32 +288,21 @@
             <!-- End of section wrapper -->
           </div>
 
-          <div class="section section-description fp-auto-height-responsive" data-section="target_ae">
+          @foreach ($targets as $target)
+          <div class="section section-description fp-auto-height-responsive" data-section="target{{ $loop->iteration}}">
             <!-- Begin of section wrapper -->
             <div class="section-wrapper center-vh dir-col anim">
               <!-- title -->
               <div class="section-title text-center">
                 <h5 class="title-bg">Target</h5>
-                <h3 class="display-4 display-title anim-2">Academic Excellence</h3>
+                <h3 class="display-4 display-title anim-2">{{ $target->judul }}</h3>
               </div>
 
               <!-- content -->
               <div class="section-content reduced anim text-center">
                 <!-- title and description -->
                 <div class="title-desc anim-3">
-                  <p>
-                    Pengembangan Riset Kolaborasi Internasional untuk mencapai publikasi Jurnal Q1/Q2 dan jurnal nasional
-                    akreditasi Sinta 1 atau 2 serta jurnal bereputasi Internasional (Scopus)
-                  </p>
-                  <p>
-                    Memperoleh hibah riset nasional dan internasional
-                  </p>
-                  <p>
-                    Paten dan HKI (Nasional dan Internasional) dengan produk riset untuk hilirisasi pada dunia industri
-                  </p>
-                  <p>
-                    Menjadi rujukan dan pembicara ahli di Internasional conference/symposium di bidang smart edukasi
-                  </p>
+                    {!! $target->isi !!}
                 </div>
 
               </div>
@@ -328,41 +317,7 @@
             </div>
             <!-- End of section wrapper -->
           </div>
-
-          <div class="section section-description fp-auto-height-responsive" data-section="target_pbd">
-            <!-- Begin of section wrapper -->
-            <div class="section-wrapper center-vh dir-col anim">
-              <!-- title -->
-              <div class="section-title text-center">
-                <h5 class="title-bg">Target</h5>
-                <h3 class="display-4 display-title anim-2">Product Business Development</h3>
-              </div>
-
-              <!-- content -->
-              <div class="section-content reduced anim text-center">
-                <!-- title and description -->
-                <div class="title-desc anim-3">
-                  <p>Pengembangan produk bisnis hasil riset unggulan DLI skala industri edukasi (industri belajar)</p>
-                  <p>Menjalankan pusat bisnis yang berorientasi pada penggunaan secara massif produk industri belajar untuk
-                    menciptakan ekosistem pembelajaran cerdas</p>
-                  <p>Menguatkan income genarting Center of Excellence DLI menuju sustainability industri belajar UM</p>
-                  <p>Memiliki smart commerce berbasis digital online (One Stop Learning) dan mendapatkan investor penyokong
-                    pusat bisnis industri belajar ini.</p>
-
-                </div>
-
-              </div>
-
-              <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
-                <a class="down">
-                  <span class="icon"></span>
-                  <span class="txt">Research</span>
-                </a>
-              </footer>
-            </div>
-            <!-- End of section wrapper -->
-          </div>
+          @endforeach
 
           <div class="section section-description fp-auto-height-responsive " data-section="research">
             <!-- Begin of section wrapper -->
@@ -378,57 +333,24 @@
                 <!-- begin of item -->
                 <div class="item row justify-content-between">
                   <!-- img-frame-normal demo -->
+                  @foreach ($researchs as $research)
                   <div class="col-12 col-sm-6 col-md-3 center-vh anim-2">
                     <div class="section-content anim translateUp">
                       <div class="images text-center">
                         <div class="img-avatar-alpha">
                           <div class="img-1 shadow">
 
-                              <img class="img" src="{{asset('/img/riset1.png')}}" alt="Image">
+                              <img class="img" style="width: 8em; height:8em" src="{{asset('/gambar-research/'.$research->logo)}}" alt="Image">
 
                           </div>
                           <div class="legend text-center pos-abs">
-                            <h6>Personalized Learning</h6>
+                            <h6>{{ $research->nama }}</h6>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh anim-2">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-
-                              <img class="img" src="{{asset('/img/riset2.png')}}" alt="Image">
-
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Ubiquitous Learning</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh anim-2">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-
-                              <img class="img" src="{{asset('/img/riset3.png')}}" alt="Image">
-
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Gamified Learning</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
+                  @endforeach
                 </div>
 
                 <div class="item row justify-content-center my-5">

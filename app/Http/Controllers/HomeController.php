@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\About;
+use App\Models\Research;
+use App\Models\Target;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
@@ -21,8 +23,10 @@ class HomeController extends Controller
     public function welcome()
     {
         $abouts = About::latest()->limit(1)->get();
+        $targets = Target::all();
         $artikels = Artikel::latest()->limit(2)->get();
-        return view('welcome', ['abouts' => $abouts, 'artikels' => $artikels]);
+        $researchs = Research::latest()->limit(3)->get();
+        return view('welcome', ['abouts' => $abouts, 'artikels' => $artikels, 'targets' => $targets, 'researchs' => $researchs]);
     }
     public function index()
     {

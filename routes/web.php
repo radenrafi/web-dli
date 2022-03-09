@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\TargetController;
 use Illuminate\Support\Facades\App;
 
@@ -40,11 +41,11 @@ Route::get('/admin', [admin::class, 'index'])->name('admin')->middleware('auth')
 Route::resource('/admin/artikel', ArtikelController::class)->middleware('auth');
 Route::resource('/admin/about', AboutController::class)->middleware('auth');
 Route::resource('/admin/target', TargetController::class)->middleware('auth');
-
+Route::resource('/admin/research', ResearchController::class)->middleware('auth');
 
 Route::get('/test', function ()
 {
-    return view('testText');
+    return view('roadmap.detailRoadmap');
 });
 
 
