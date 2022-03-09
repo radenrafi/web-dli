@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\App;
 // });
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
-// Auth::routes();
+Auth::routes();
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
@@ -47,11 +47,24 @@ Route::get('/test', function ()
 
 
 // punya e pras
-Route::get('/research', function ()
+
+// {{ url('/admin/roadmap') }}
+// {{ url('/admin/research') }}
+// {{ url('/admin/target') }}
+
+Route::get('/admin/target', function ()
+{
+    return view('target.edit');
+});
+Route::get('/admin/research', function ()
 {
     return view('research.edit');
 });
-Route::get('/roadmap', function ()
+Route::get('/admin/roadmap', function ()
 {
     return view('roadmap.edit');
+});
+Route::get('/view-roadmap', function ()
+{
+    return view('roadmap.detailRoadmap');
 });

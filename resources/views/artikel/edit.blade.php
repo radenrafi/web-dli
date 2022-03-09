@@ -28,7 +28,7 @@
             <label for="isi">Isi artikel</label>
             <textarea name="isi" id="isi" cols="30" rows="3" class="form-control"> {{old('isi') ?? $artikel->isi}}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary mb-4" value="submit">Daftar</button>
+        <button type="submit" class="btn btn-primary mb-4" value="submit">Submit</button>
         @csrf
     </form>
 </body>

@@ -20,14 +20,16 @@ main .article .article-column .article-card .article-card-img {
 main .article .article-column .article-card .article-card-body .article-card-title {
   color: #1d1d1d;
   font-weight: bold;
+  padding-top: 1rem;
+  font-size: 1.3em;
 }
 
-main .article .article-column .article-card .article-card-body .article-card-text {
+main .article .article-column .article-card .article-card-body p {
   color: #1d1d1d;
 }
 
 main .article .article-column .article-card .article-card-body a {
-  margin-bottom: 1em;
+  color: #1d1d1d;
 }
 
 main .article .article-button a {

@@ -77,76 +77,14 @@
             </div>
         </nav>
         {{--  ending navbar atas  --}}
+
+
         <!-- BEGIN OF site header Menu -->
 
 
         <main class="py-4">
             <div class="row">
-                <div class="col-md-2">
-                    <header class="page-header navbar page-header-alpha menu-right topmenu-right">
-                        <!-- Begin of sidebar nav menu params class: text-only / icon-only-->
-                        <nav class="navbar-sidebar">
-                            <ul class="navbar-nav" id="qmenu">
-                                <li class="nav-item" data-menuanchor="article">
-                                    <a href="{{ url('/admin/artikel') }}">
-                                    <i class="icon ion-ios-book bg-dark"></i>
-                                    <span class="txt">Article</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="about">
-                                <a href="{{ url('/admin/about') }}">
-                                    <i class="icon ion-information bg-dark"></i>
-                                    <span class="txt">About</span>
-                                </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="target_ae">
-                                <a href="{{ url('/admin/target') }}">
-                                    <i class="icon ion-checkmark-circled bg-dark"></i>
-                                    <span class="txt">Target</span>
-                                </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="research">
-                                <a href="{{ url('/admin/research') }}">
-                                    <i class="icon ion-ios-analytics-outline bg-dark"></i>
-                                    <span class="txt">Research</span>
-                                </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="roadmap">
-                                <a href="{{ url('/admin/roadmap') }}">
-                                    <i class="icon ion-flag bg-dark"></i>
-                                    <span class="txt">Roadmap</span>
-                                </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="organization">
-                                <a href="#organization">
-                                    <i class="icon ion-ios-people-outline bg-dark"></i>
-                                    <span class="txt">Organization</span>
-                                </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="products">
-                                <a href="#products">
-                                    <i class="icon ion-ios-lightbulb-outline bg-dark"></i>
-                                    <span class="txt">Products</span>
-                                </a>
-                                </li>
-
-                                <li class="nav-item" data-menuanchor="contact">
-                                <a href="#contact">
-                                    <i class="icon ion-ios-telephone-outline bg-dark"></i>
-                                    <span class="txt">Contact</span>
-                                </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- End of sidebar nav menu -->
-                        {{--  </div>  --}}
-                    </header>
-                </div>
-                <div class="col-md-9">
-                    @yield('content',
-                    'Hai Admin, Semangat kerja ya!'
-                    )
-                </div>
+                @yield('content','Hai Admin, Semangat kerja ya!')
             </div>
         </main>
     </div>

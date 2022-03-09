@@ -2,7 +2,7 @@
 
 @section('content')
 <main class="container">
-    <h3>About</h3>
+    <h3 class="text-center">About</h3>
     <form action="#" method="POST" enctype="multipart/form-data" class="form">
         <div class="form-group">
             <label for="judul">Judul About</label>
