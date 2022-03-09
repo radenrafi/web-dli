@@ -25,7 +25,7 @@
             </div>
         </div>
         {{--  ending form research  --}}
-        <button type="submit" class="btn btn-primary mt-3" value="submit">Daftar</button>
+        <button type="submit" class="btn btn-primary mt-3" value="submit">Submit</button>
         @csrf
     </form>
 </div>

@@ -218,9 +218,9 @@
                     @forelse ($artikels as $artikel)
                     <div class="col-8 col-md-5 article-column">
                         <div class="card article-card h-100">
-                            <img src="{{ asset("gambar-artikel/$artikel->gambar") }}" class="article-card-img" alt="...">
+                            <img src="{{ asset("gambar-artikel/$artikel->gambar") }}" style="height:150px;" class="article-card-img" alt="...">
                             <div class="article-card-body">
-                                <h5 class="article-card-title">{{ $artikel->judul }}</h5>
+                                <a href="{{ url('/artikel/'.$artikel->id) }}" class="article-card-title">{{ $artikel->judul }}</a>
                                 <p class="article-card-text">{!! $artikel->deskripsi !!}</p>
                                 <a href="{{ url('/artikel/'.$artikel->id) }}" class="article-link">Read more..</a>
                             </div>
@@ -500,7 +500,7 @@
               <!-- end of item -->
               <div class="text-center">
 
-                <a class="btn btn-transp-arrow btn-outline btn-sm btn-primary btn-round" href="./detail-roadmap.html">
+                <a class="btn btn-transp-arrow btn-outline btn-sm btn-primary btn-round" href="">
                   <span class="icon arrow-right"></span>
                   <span class="text">View Detail</span>
                 </a>

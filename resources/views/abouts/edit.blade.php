@@ -2,7 +2,7 @@
 
 @section('content')
 <main class="container">
-    <h3>About</h3>
+    <h3 class="text-center">About</h3>
     <form action="{{url('/admin/about/'.$about->id)}}" method="POST" enctype="multipart/form-data" class="form">
         @method('PATCH')
         <div class="form-group">
