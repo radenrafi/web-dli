@@ -41,7 +41,7 @@
 
                         {{--  label  --}}
                         <div class="label">
-                            <p class="article-user-label">{{ $artikel->kategori }}</p>
+                            <a href="#" class="article-user-label">{{ $artikel->kategori }}</a>
                         </div>
 
                     </div>
@@ -63,14 +63,11 @@
             <span class="section-line section"></span>
 
             <div class="label">
-                <a href="{{ url('/artikel') }}" class="article-user-label">All</a>
-                <a href="{{ url('/artikel/kategori/teknologi') }}" class="article-user-label">Teknologi</a>
-                <a href="{{ url('/artikel/kategori/edukasi') }}" class="article-user-label">Edukasi</a>
-                <a href="{{ url('/artikel/kategori/startup') }}" class="article-user-label">Startup</a>
-                <a href="{{ url('/artikel/kategori/produk') }}" class="article-user-label">Produk</a>
-                <a href="{{ url('/artikel/kategori/event') }}" class="article-user-label">Event</a>
-                <a href="{{ url('/artikel/kategori/promosi') }}" class="article-user-label">Promosi</a>
-                <a href="{{ url('/artikel/kategori/marketing') }}" class="article-user-label">Marketing</a>
+                <a href="#" class="article-user-label">Technologi</a>
+                <a href="#" class="article-user-label">Education</a>
+                <a href="#" class="article-user-label">Economic</a>
+                <a href="#" class="article-user-label">Startup</a>
+                <a href="#" class="article-user-label">Politic</a>
             </div>
             {{--  ending label  --}}
 
@@ -79,16 +76,32 @@
             <span class="section-line section"></span>
 
             <div class="card article-popular-post">
-                @foreach ($populars as $popular)
-                <a href="{{ url('/artikel/'.$popular->id) }}" class="row article-pp-row">
+                <a href="#" class="row article-pp-row">
                     <div class="col-3">
-                        <img class="article-popular-img" src="{{ asset("gambar-artikel/$artikel->gambar") }}" alt="">
+                        <img class="article-popular-img" src="{{asset('img/bg.png')}}" alt="">
                     </div>
                     <div class="col-9 article-popular-title">
-                        {{ $popular->judul }}
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </div>
                 </a>
-                @endforeach
+
+                <a href="#" class="row article-pp-row">
+                    <div class="col-3">
+                        <img class="article-popular-img" src="{{asset('img/bg.png')}}" alt="">
+                    </div>
+                    <div class="col-9 article-popular-title">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </a>
+
+                <a href="#" class="row article-pp-row">
+                    <div class="col-3">
+                        <img class="article-popular-img" src="{{asset('img/bg.png')}}" alt="">
+                    </div>
+                    <div class="col-9 article-popular-title">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </a>
             </div>
             {{--  ending popular post  --}}
         </div>

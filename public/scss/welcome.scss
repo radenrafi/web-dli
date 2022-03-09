@@ -24,16 +24,19 @@ main{
                     border-bottom-left-radius: 0em;
                 }
                 .article-card-body{
+                    // margin-bottom: 1em;
                     .article-card-title{
                         color: $textBlack;
                         font-weight: bold;
+                        padding-top: 1rem;
+                        font-size: 1.3em;
                     }
-                    .article-card-text{
+                    p{
                         color: $textBlack;
                     }
                     a{
+                        color: $textBlack;
                         // text-decoration: underline;
-                        margin-bottom: 1em;
 
                     }
                 }

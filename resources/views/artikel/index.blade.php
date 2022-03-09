@@ -3,6 +3,8 @@
 @section('title', 'Artikel')
 
 @section('content')
+<div class="container">
+<h3 class="text-center">Artikel</h3>
 <div class="row justify-content-center">
     <div class="col-md-11">
         @if (session()->has('pesan'))
@@ -50,4 +52,6 @@
         </table>
     </div>
 </div>
+</div>
+
 @endsection
