@@ -102,6 +102,7 @@ class ArtikelController extends Controller
         $pathStore = $request->gambar->move(public_path('gambar-artikel'), $pathGambar);
         $artikel = Artikel::find($artikel->id);
         $artikel->judul = $validateData['judul'];
+        $artikel->deskripsi = Str::substr($validateData['isi'], 0, 50);
         $artikel->isi = $validateData['isi'];
         $artikel->kategori = $validateData['kategori'];
         $artikel->gambar = $pathGambar;

@@ -482,25 +482,26 @@
             <div class="section-wrapper twoside">
 
               <!-- title -->
+              @foreach ($roadmaps as $roadmap)
               <div class="section-title text-center ">
                 <h5 class="title-bg">Roadmap</h5>
                 <div class="title-abs">
                   <h2 class="display-title">Roadmap Riset DLI 3 Tahun ke Depan</h2>
-                  <h5>(2021 - 2023)</h5>
+                  <h5>({{ $roadmap->tahun }})</h5>
                 </div>
               </div>
-
               <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
               <!-- begin of item -->
               <div class="item row justify-content-center">
                 <div class="col-12">
-                  <img src="{{asset('/img/roadmap.png')}}" class="img-fluid" alt="Gambar Roadmap DLI">
+                  <img src="{{asset('/gambar-roadmap/'.$roadmap->gambar)}}" class="img-fluid" alt="Gambar Roadmap DLI">
                 </div>
               </div>
+              @endforeach
               <!-- end of item -->
               <div class="text-center">
 
-                <a class="btn btn-transp-arrow btn-outline btn-sm btn-primary btn-round" href="">
+                <a class="btn btn-transp-arrow btn-outline btn-sm btn-primary btn-round" href="{{ url('/roadmap') }}">
                   <span class="icon arrow-right"></span>
                   <span class="text">View Detail</span>
                 </a>

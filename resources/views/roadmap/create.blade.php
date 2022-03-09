@@ -3,8 +3,7 @@
 @section('content')
 <div class="container">
     <h3 class="text-center">Roadmap</h3>
-    <form action="{{ url('/admin/roadmap/'.$roadmap->id) }}" method="POST" enctype="multipart/form-data" class="form">
-        @method('PATCH')
+    <form action="{{ url('/admin/roadmap') }}" method="POST" enctype="multipart/form-data" class="form">
         {{--  Begin form roadmap  --}}
         <div class="row">
             <div class="col">

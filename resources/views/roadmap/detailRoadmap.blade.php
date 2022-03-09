@@ -51,7 +51,7 @@
     <!-- End of menu icon toggler -->
 
     <!-- Begin of logo/brand -->
-    <a class="navbar-brand" href="http://dli.um.ac.id/">
+    <a class="navbar-brand" href="{{ url('/') }}">
       <span class="logo">
         <img class="light-logo" src="{{asset('/img/logo.png')}}" alt="Logo DLI">
       </span>
@@ -68,7 +68,7 @@
       <nav class="navbar-mainmenu">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="http://dli.um.ac.id/">Home
+            <a class="nav-link" href="{{ url('/') }}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -86,19 +86,19 @@
       <nav class="navbar-sidebar ">
         <ul class="navbar-nav" id="qmenu">
           <li class="nav-item" data-menuanchor="home">
-            <a href="http://dli.um.ac.id/#home">
+            <a href="{{ url('/') }}">
               <i class="icon ion-home"></i>
               <span class="txt">Home</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="about">
-            <a href="http://dli.um.ac.id/#about">
+            <a href="{{ url('/#about') }}">
               <i class="icon ion-information"></i>
               <span class="txt">About</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="contact">
-            <a href="http://dli.um.ac.id/#contact">
+            <a href="{{ url('/#contact') }}">
               <i class="icon ion-ios-telephone-outline"></i>
               <span class="txt">Contact</span>
             </a>
@@ -110,6 +110,7 @@
   </header>
 
   <!-- BEGIN OF page main content -->
+  @foreach ($roadmaps as $roadmap)
   <main class="page-main page-fullpage main-anim" id="itempage">
 
     <!-- Begin of list two side 1 section -->
@@ -118,7 +119,7 @@
         <div class="cover-content">
           <div class="title-desc">
             <h2 class="display-4 display-title">Roadmap</h2>
-            <p>Roadmap Riset DLI 3 Tahun ke Depan (2021 - 2023)</p>
+            <p>Roadmap Riset DLI 3 Tahun ke Depan ({{ $roadmap->tahun }})</p>
           </div>
         </div>
       </div>
@@ -143,10 +144,11 @@
                 <!-- img-frame-normal demo -->
                 <div class="col-12">
                     {{--  gambar yang diganti --}}
-                  <img src="{{asset('/img/roadmap.png')}}" class="img-fluid" alt="Gambar Roadmap">
+                  <img src="{{asset('/gambar-roadmap/'.$roadmap->gambar)}}" class="img-fluid" alt="Gambar Roadmap">
                 </div>
                 <div class="col-12 mt-3">
                     {{--  isinya isi deskripsi --}}
+                    {!! $roadmap->isi !!}
                 </div>
               </div>
 
@@ -163,6 +165,7 @@
     <!-- End of list two side 1 section -->
 
   </main>
+  @endforeach
 
   <!-- scripts -->
   <!-- All Javascript plugins goes here -->

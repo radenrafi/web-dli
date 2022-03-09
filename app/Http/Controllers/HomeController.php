@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\About;
 use App\Models\Research;
+use App\Models\Roadmap;
 use App\Models\Target;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
@@ -26,7 +27,14 @@ class HomeController extends Controller
         $targets = Target::all();
         $artikels = Artikel::latest()->limit(2)->get();
         $researchs = Research::latest()->limit(3)->get();
-        return view('welcome', ['abouts' => $abouts, 'artikels' => $artikels, 'targets' => $targets, 'researchs' => $researchs]);
+        $roadmaps = Roadmap::all();
+        return view('welcome', [
+            'abouts' => $abouts,
+            'artikels' => $artikels,
+            'targets' => $targets,
+            'researchs' => $researchs,
+            'roadmaps' => $roadmaps
+        ]);
     }
     public function index()
     {
@@ -84,5 +92,10 @@ class HomeController extends Controller
         $tanggal = $result->created_at->isoFormat('D MMMM Y');
         $populars = Artikel::limit(5)->orderBy('klik', 'desc')->get();
         return view('artikel.show', ['artikel' => $result, 'tanggal' => $tanggal, 'populars' => $populars]);
+    }
+    public function roadmap()
+    {
+        $roadmaps = Roadmap::all();
+        return view('roadmap.detailRoadmap', ['roadmaps' => $roadmaps]);
     }
 }
