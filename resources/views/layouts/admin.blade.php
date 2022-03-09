@@ -111,6 +111,18 @@
                                     <span class="txt">Research</span>
                                 </a>
                                 </li>
+                                <li class="nav-item" data-menuanchor="topResearch">
+                                    <a href="{{ url('/admin/topResearch') }}">
+                                        <i class="icon ion-ios-star-outline bg-dark"></i>
+                                        <span class="txt">Top Research</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-menuanchor="colaborationResearcher">
+                                    <a href="{{ url('/admin/colaborationResearcher') }}">
+                                        <i class="icon ion-ios-people-outline bg-dark"></i>
+                                        <span class="txt">Colaboration Research</span>
+                                    </a>
+                                </li>
                                 <li class="nav-item" data-menuanchor="roadmap">
                                 <a href="{{ url('/admin/roadmap') }}">
                                     <i class="icon ion-flag bg-dark"></i>

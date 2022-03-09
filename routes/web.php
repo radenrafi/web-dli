@@ -49,7 +49,3 @@ Route::resource('/admin/target', TargetController::class)->middleware('auth');
 Route::resource('/admin/research', ResearchController::class)->middleware('auth');
 Route::resource('/admin/roadmap', RoadmapController::class)->middleware('auth');
 
-Route::get('/test', function ()
-{
-    return view('roadmap.detailRoadmap');
-});
