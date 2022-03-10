@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Research;
 use App\Models\Roadmap;
 use App\Models\Target;
+use App\Models\TopResearch;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
@@ -28,12 +29,14 @@ class HomeController extends Controller
         $artikels = Artikel::latest()->limit(2)->get();
         $researchs = Research::latest()->limit(3)->get();
         $roadmaps = Roadmap::all();
+        $topResearchs = TopResearch::all();
         return view('welcome', [
             'abouts' => $abouts,
             'artikels' => $artikels,
             'targets' => $targets,
             'researchs' => $researchs,
-            'roadmaps' => $roadmaps
+            'roadmaps' => $roadmaps,
+            'topResearchs' => $topResearchs
         ]);
     }
     public function index()
@@ -92,6 +95,11 @@ class HomeController extends Controller
         $tanggal = $result->created_at->isoFormat('D MMMM Y');
         $populars = Artikel::limit(5)->orderBy('klik', 'desc')->get();
         return view('artikel.show', ['artikel' => $result, 'tanggal' => $tanggal, 'populars' => $populars]);
+    }
+    public function showTopResearch($id)
+    {
+        $topResearch = TopResearch::find($id);
+        return view('topResearch.show', ['topResearch' => $topResearch]);
     }
     public function roadmap()
     {

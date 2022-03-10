@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\TargetController;
+use App\Http\Controllers\TopResearchController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -38,6 +39,9 @@ Route::get('/artikel', [HomeController::class, 'indexArtikel'])->name('artikel')
 Route::get('/artikel/kategori/{kategori}', [HomeController::class, 'kategoriArtikel']);
 Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showArtikel');
 
+// topResearch
+Route::get('/topResearch/{id}', [HomeController::class, 'showTopResearch'])->name('showTopResearch');
+
 // roadmap
 Route::get('/roadmap', [HomeController::class, 'roadmap']);
 
@@ -48,4 +52,5 @@ Route::resource('/admin/about', AboutController::class)->middleware('auth');
 Route::resource('/admin/target', TargetController::class)->middleware('auth');
 Route::resource('/admin/research', ResearchController::class)->middleware('auth');
 Route::resource('/admin/roadmap', RoadmapController::class)->middleware('auth');
+Route::resource('/admin/topResearch', TopResearchController::class)->middleware('auth');
 

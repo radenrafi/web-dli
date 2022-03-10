@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('top_research', function (Blueprint $table) {
+        Schema::create('colaborations', function (Blueprint $table) {
             $table->id();
-            $table->string('gambar');
-            $table->char('singkatan', 6);
-            $table->char('judul', 100);
-            $table->char('subJudul', 100);
-            $table->text('isi');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('top_research');
+        Schema::dropIfExists('colaborations');
     }
 };
