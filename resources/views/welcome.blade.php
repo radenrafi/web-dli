@@ -489,7 +489,7 @@
             <!-- Begin of section wrapper -->
             <div class="section-wrapper center-vh dir-col anim">
               <!-- title -->
-              <div class="section-title text-center">
+              <div class="section-title text-center">`
                 <h5 class="title-bg">Researcher</h5>
                 <h2 class="display-title anim-2 mb-5">Collaboration Researchers</h2>
               </div>
@@ -794,7 +794,7 @@
                         <div class="img-avatar-alpha">
                           <div class="img-1 shadow">
                             <a href="./product/muse_akademi.html" title="Muse Akademi">
-                              <img class="img" src="{{asset('/img/products/muse.png')}}" alt="Logo Muse Akademi">
+                              <img class="img`" src="{{asset('/img/products/muse.png')}}" alt="Logo Muse Akademi">
                             </a>
                           </div>
                         </div>
@@ -811,7 +811,7 @@
                       <div class="images text-center">
                         <div class="img-avatar-alpha">
                           <div class="img-1 shadow">
-                            <a href="./product/labird.html" title="La Bird">
+                            <a href=". /product/labird.html" title="La Bird">
                               <img class="img" src="{{asset('/img/products/labird.png')}}" alt="Logo La Bird">
                             </a>
                           </div>
