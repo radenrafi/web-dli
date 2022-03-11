@@ -49,3 +49,16 @@ Route::resource('/admin/target', TargetController::class)->middleware('auth');
 Route::resource('/admin/research', ResearchController::class)->middleware('auth');
 Route::resource('/admin/roadmap', RoadmapController::class)->middleware('auth');
 
+// punya pras
+Route::get('/admin/product', function () {
+    return view('product.index');
+});
+Route::get('/admin/product/tambah', function () {
+    return view('product.create');
+});
+Route::get('/admin/product/show', function () {
+    return view('product.show');
+});
+Route::get('/admin/contact', function () {
+    return view('contact.create');
+});

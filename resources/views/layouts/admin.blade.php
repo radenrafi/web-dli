@@ -136,14 +136,14 @@
                                 </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="products">
-                                <a href="#products">
+                                <a href="{{ url('/admin/product')}}">
                                     <i class="icon ion-ios-lightbulb-outline bg-dark"></i>
                                     <span class="txt">Products</span>
                                 </a>
                                 </li>
 
                                 <li class="nav-item" data-menuanchor="contact">
-                                <a href="#contact">
+                                <a href="{{ url('/admin/contact')}}">
                                     <i class="icon ion-ios-telephone-outline bg-dark"></i>
                                     <span class="txt">Contact</span>
                                 </a>
