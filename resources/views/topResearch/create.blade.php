@@ -3,7 +3,7 @@
 @section('content')
 <main class="container">
     <h3 class="text-center">Top Reasearch</h3>
-    <form action="#" method="POST" enctype="multipart/form-data" class="form">
+    <form action="{{ url('/admin/topResearch') }}" method="POST" enctype="multipart/form-data" class="form">
         <div class="form-group">
             <label for="gambar">Gambar</label>
             <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" id="gambar" value="{{old('gambar')}}">
@@ -19,7 +19,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="singkatan">singkatan</label>
+            <label for="singkatan">Singkatan</label>
             <input type="text" class="form-control @error('singkatan') is-invalid @enderror" name="singkatan" id="singkatan" value="{{old('singkatan')}}">
             @error('singkatan')
                 <div class="text-danger">{{ $message }}</div>

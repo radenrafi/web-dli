@@ -47,7 +47,7 @@
           <!-- End of menu icon toggler -->
 
           <!-- Begin of logo/brand -->
-          <a class="navbar-brand" href="http://dli.um.ac.id/">
+          <a class="navbar-brand" href="{{ url('/') }}">
             <span class="logo">
               <img class="light-logo" src="{{asset('/img/logo.png')}}" alt="Logo DLI">
             </span>
@@ -64,7 +64,7 @@
             <nav class="navbar-mainmenu">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="http://dli.um.ac.id/">Home
+                  <a class="nav-link" href="{{ url('/') }}">Home
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
@@ -394,74 +394,24 @@
                 <!-- begin of item -->
                 <div class="item row justify-content-between">
                   <!-- img-frame-normal demo -->
+                  @foreach ($topResearchs as $topResearch)
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
                     <div class="section-content anim translateUp">
                       <div class="images text-center">
                         <div class="img-avatar-alpha">
                           <div class="img-1 shadow">
-                            <a href="topic/olai.html" title="Pembelajaran Daring (Online Learning-based Artificial Intelligence)">
-                              <img class="img" src="{{asset('/img/topics1.png')}}" alt="Image">
+                            <a href="{{ url('/topResearch/'.$topResearch->id)}}" title="Pembelajaran Daring (Online Learning-based Artificial Intelligence)">
+                              <img class="img" style="width: 8em; height: 8em" src="{{asset('/gambar-topResearch/'.$topResearch->gambar)}}" alt="Image">
                             </a>
                           </div>
                           <div class="legend text-center pos-abs">
-                            <h6>OLAI</h6>
+                            <h6>{{ $topResearch->singkatan }}</h6>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="topic/cclp.html" title="Platform Komunikasi (Chat-based Collaboration Learning Platform)">
-                              <img class="img" src="{{asset('/img/topics2.png')}}" alt="Image">
-                            </a>
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>CCLP</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="topic/cebd.html" title="Pembelajaran Adaptif (Competency-based Education with Big Data)">
-                              <img class="img" src="{{asset('/img/topics3.png')}}" alt="Image">
-                            </a>
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>CEBD</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="topic/fmla.html"
-                              title="Inovasi Media Pembelajaran Baru (Future Media Learning-based Interactive Mobile, AR/VR, and Smart Sensor)">
-                              <img class="img" src="{{asset('/img/topics4.png')}}" alt="Image">
-                            </a>
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>FMLA</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  @endforeach
                 </div>
                 <!-- end of item -->
               </div>

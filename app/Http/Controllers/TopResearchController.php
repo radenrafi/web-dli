@@ -14,7 +14,8 @@ class TopResearchController extends Controller
      */
     public function index()
     {
-        //
+        $topResearchs = TopResearch::all();
+        return view('topResearch.index', ['topResearchs' => $topResearchs]);
     }
 
     /**
@@ -24,7 +25,7 @@ class TopResearchController extends Controller
      */
     public function create()
     {
-        //
+        return view('topResearch.create');
     }
 
     /**
@@ -35,7 +36,25 @@ class TopResearchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'judul' => 'required|max:100',
+            'singkatan' => 'required|max:6',
+            'subJudul' => 'required|max:100',
+            'isi' => 'required',
+            'gambar' => 'required|file|image|max:1000'
+        ]);
+        $extGambar = $request->gambar->getClientOriginalExtension();
+        $pathGambar = "topResearch-".time().".".$extGambar;
+        $pathStore = $request->gambar->move(public_path('gambar-topResearch'), $pathGambar);
+        $topResearch = new TopResearch();
+        $topResearch->judul = $validateData['judul'];
+        $topResearch->singkatan = $validateData['singkatan'];
+        $topResearch->subJudul = $validateData['subJudul'];
+        $topResearch->isi = $validateData['isi'];
+        $topResearch->gambar = $pathGambar;
+        $topResearch->save();
+
+        return redirect()->route('topResearch.index')->with('pesan', "Top Research Berhasil Ditambah");
     }
 
     /**
@@ -46,7 +65,8 @@ class TopResearchController extends Controller
      */
     public function show(TopResearch $topResearch)
     {
-        //
+        return view('topResearch.show', ['topResearch' => $topResearch,]);
+
     }
 
     /**
@@ -57,7 +77,7 @@ class TopResearchController extends Controller
      */
     public function edit(TopResearch $topResearch)
     {
-        //
+        return view('topResearch.edit', ['topResearch' => $topResearch]);
     }
 
     /**
@@ -69,7 +89,24 @@ class TopResearchController extends Controller
      */
     public function update(Request $request, TopResearch $topResearch)
     {
-        //
+        $validateData = $request->validate([
+            'judul' => 'required|max:100',
+            'singkatan' => 'required|max:6',
+            'subJudul' => 'required|max:100',
+            'isi' => 'required',
+            'gambar' => 'required|file|image|max:1000'
+        ]);
+        $pathGambar = $topResearch->gambar;
+        $pathStore = $request->gambar->move(public_path('gambar-topResearch'), $pathGambar);
+        $topResearch = TopResearch::find($topResearch->id);
+        $topResearch->judul = $validateData['judul'];
+        $topResearch->singkatan = $validateData['singkatan'];
+        $topResearch->subJudul = $validateData['subJudul'];
+        $topResearch->isi = $validateData['isi'];
+        $topResearch->gambar = $pathGambar;
+        $topResearch->save();
+
+        return redirect()->route('topResearch.index')->with('pesan', "Top Research Berhasil Diedit");
     }
 
     /**
@@ -80,6 +117,7 @@ class TopResearchController extends Controller
      */
     public function destroy(TopResearch $topResearch)
     {
-        //
+        $topResearch->delete();
+        return redirect()->route('topResearch.index')->with('pesan', "Top Research Berhasil Dihapus");
     }
 }

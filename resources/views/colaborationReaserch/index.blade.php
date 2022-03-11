@@ -14,39 +14,41 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-            <a class="btn btn-primary mb-2" href="#" role="button">Tambah</a>
+            <a class="btn btn-primary mb-2" href="{{ url('/admin/colaboration/create')}}" role="button">Tambah</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nama</th>
-                        <th>Asal</th>
+                        <th>Instansi</th>
+                        <th>Negara</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    @forelse ($colaborations as $colaboration)
                     <tr>
-                        <th>No</th>
-                        <th><a href="#">Nama</a></th>
-                        <th>Asal</th>
+                        <th>{{ $loop->iteration }}</th>
+                        <th>{{ $colaboration->nama }}</th>
+                        <th>{{ $colaboration->instansi }}</th>
+                        <th>{{ $colaboration->negara }}</th>
                         <th>
-                            <a href="#" class="btn btn-primary justify-items-center" role="button">Edit</a>
+                            <a href="{{ url('/admin/colaboration/'.$colaboration->id.'/edit') }}" class="btn btn-primary justify-items-center" role="button">Edit</a>
                         </th>
                         <th>
-                            <form action="#" method="POST">
+                            <form action="{{ url('/admin/colaboration/'.$colaboration->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-danger justify-items-center">Hapus</button>
                             </form>
                         </th>
                     </tr>
-                    {{--  @empty  --}}
+                    @empty
                     <div class="alert alert-success" role="alert">
                         Tidak ada data
                     </div>
-                    {{--  @endforelse  --}}
+                    @endforelse
                 </tbody>
             </table>
         </div>
