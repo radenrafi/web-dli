@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('colaborations', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
+            $table->char('nama', 100);
+            $table->char('instansi', 100);
+            $table->char('negara', 100);
             $table->timestamps();
         });
     }

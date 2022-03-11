@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ColaborationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\RoadmapController;
@@ -53,4 +54,4 @@ Route::resource('/admin/target', TargetController::class)->middleware('auth');
 Route::resource('/admin/research', ResearchController::class)->middleware('auth');
 Route::resource('/admin/roadmap', RoadmapController::class)->middleware('auth');
 Route::resource('/admin/topResearch', TopResearchController::class)->middleware('auth');
-
+Route::resource('/admin/colaboration', ColaborationController::class)->middleware('auth');

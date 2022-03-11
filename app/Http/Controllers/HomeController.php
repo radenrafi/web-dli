@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\About;
+use App\Models\Colaboration;
 use App\Models\Research;
 use App\Models\Roadmap;
 use App\Models\Target;
@@ -30,13 +31,15 @@ class HomeController extends Controller
         $researchs = Research::latest()->limit(3)->get();
         $roadmaps = Roadmap::all();
         $topResearchs = TopResearch::all();
+        $colaborations = Colaboration::all();
         return view('welcome', [
             'abouts' => $abouts,
             'artikels' => $artikels,
             'targets' => $targets,
             'researchs' => $researchs,
             'roadmaps' => $roadmaps,
-            'topResearchs' => $topResearchs
+            'topResearchs' => $topResearchs,
+            'colaborations' => $colaborations
         ]);
     }
     public function index()

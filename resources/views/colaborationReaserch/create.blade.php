@@ -4,8 +4,8 @@
 
 @section('content')
 <main class="container">
-    <h3 class="text-center">Colaboration Risearcher</h3>
-    <form action="#" method="POST" enctype="multipart/form-data" class="form">
+    <h3 class="text-center">Colaboration Researcher</h3>
+    <form action="{{ url('/admin/colaboration') }}" method="POST" enctype="multipart/form-data" class="form">
         <div class="form-group">
             <label for="gambar">Foto</label>
             <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" id="gambar" value="{{old('gambar')}}">
@@ -21,14 +21,19 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="asal">Asal</label>
-            <input type="text" class="form-control @error('asal') is-invalid @enderror" name="asal" id="asal" value="{{old('asal')}}">
-            @error('asal')
+            <label for="instansi">Instansi</label>
+            <input type="text" class="form-control @error('instansi') is-invalid @enderror" name="instansi" id="instansi" value="{{old('instansi')}}">
+            @error('instansi')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-
-
+        <div class="form-group">
+            <label for="negara">Negara</label>
+            <input type="text" class="form-control @error('negara') is-invalid @enderror" name="negara" id="negara" value="{{old('negara')}}">
+            @error('negara')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
         <button type="submit" class="btn btn-primary mt-3" value="submit">Daftar</button>
         @csrf
     </form>
