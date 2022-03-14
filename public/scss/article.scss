@@ -114,10 +114,10 @@ $textBlack: #1d1d1d;
                 }
                 @media (max-width: 576px) {
                     background-color: rgba(255, 255, 255, 0);
-                border: none;
-                .article-user-img{
-                    height: 150px;
-                    width: 200px;
+                    border: none;
+                    .article-user-img{
+                        height: 150px;
+                        width: 200px;
                 }
                 .article-user-header{
                     @include article-info;
