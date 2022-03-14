@@ -491,26 +491,29 @@
               </div>
 
               <!-- content -->
-              <div class="section-content anim text-center">
+              {{-- <div class="section-content anim text-center">
                 <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
                 <!-- begin of item -->
-                <div class="item row justify-content-between mb-3">
+                <div class="item row justify-content-between mb-3"> --}}
                   <!-- img-frame-normal demo -->
-                  @foreach ($products as $product)
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="{{ url('product/'.$product->id) }}" title="{{ $product->nama }}">
-                              <img class="img" src="{{asset('/gambar-product/logo/'.$product->logo)}}" alt="Logo {{ $product->nama }}">
-                            </a>
+                <div class="row">
+                    @foreach ($products as $product)
+                    <div class="col-12 col-sm-6 col-md-4">
+                      <div class="section-content anim text-center">
+                        <div class="images text-center">
+                          <div class="img-avatar-alpha">
+                            <div class="img-1 shadow">
+                              <a href="{{ url('product/'.$product->id) }}" title="{{ $product->nama }}">
+                                <img class="img" src="{{asset('/gambar-product/logo/'.$product->logo)}}" alt="Logo {{ $product->nama }}">
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  @endforeach
+                    @endforeach
+                </div>
+
             </div>
             <!-- End of section wrapper -->
           </div>
