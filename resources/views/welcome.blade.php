@@ -714,19 +714,22 @@
                 <!-- begin of item -->
                 <div class="item row justify-content-between mb-3">
                   <!-- img-frame-normal demo -->
+                  @foreach ($products as $product)
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
                     <div class="section-content anim translateUp">
                       <div class="images text-center">
                         <div class="img-avatar-alpha">
                           <div class="img-1 shadow">
-                            <a href="./product/umoocs.html" title="Smart Moocs">
-                              <img class="img" src="{{asset('/img/products/umoocs.png')}}" alt="Logo Umoocs">
+                            <a href="{{ url('product/'.$product->id) }}" title="{{ $product->nama }}">
+                              <img class="img" src="{{asset('/gambar-product/logo/'.$product->logo)}}" alt="Logo {{ $product->nama }}">
                             </a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  @endforeach
+
                   <!-- img-frame-normal demo -->
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
                     <div class="section-content anim translateUp">
@@ -872,6 +875,7 @@
                     <!-- content -->
                     <div class="section-content anim text-left">
                       <!-- title and description -->
+                      @foreach ($contacts as $contact)
                       <div class="title-desc">
                         <div class="anim-2">
                           <h5>Customer Service</h5>
@@ -883,20 +887,19 @@
                           <div class="row">
                             <div class="col-12 col-md-12 col-lg-6">
                               <h4>Contact</h4>
-                              <p>Call: 0812-3376-4606 (Admin)</p>
-                              <p>Email: dli@um.ac.id</p>
+                              <p>Call: {{ $contact->nomor }} (Admin)</p>
+                              <p>Email: {{ $contact->email }}</p>
                             </div>
                             <div class="col-12 col-md-12 col-lg-6">
                               <h4>Address</h4>
                               <p>
-                                B15 Building
-                                <br>5 Semarang Street, Malang
-                                <br>East Java, Indonesia
+                                {{ $contact->alamat }}
                               </p>
                             </div>
                           </div>
                         </div>
                       </div>
+                      @endforeach
 
                       <!-- Action button -->
                       <div class="btns-action anim-4">
@@ -951,35 +954,29 @@
                       <div class="">
                         <div class="form-container form-container-card">
                           <!-- Message form container -->
-                          <form class="send_message_form message form" method="post" action="#!" id="message_form">
-                            <div class="form-group name">
-                              <label for="mes-name">Name :</label>
-                              <input id="mes-name" name="name" type="text" placeholder=""
+                          <form class="form" method="POST" action="{{ url('/message') }}">
+                            <div class="form-group">
+                              <label for="nama">Name :</label>
+                              <input id="nama" name="nama" type="text" placeholder=""
                                 class="form-control-line form-success-clean" required>
                             </div>
-                            <div class="form-group email">
-                              <label for="mes-email">Email :</label>
-                              <input id="mes-email" type="email" placeholder="" name="email"
+                            <div class="form-group">
+                              <label for="email">Email :</label>
+                              <input id="email" type="email" placeholder="" name="email"
                                 class="form-control-line form-success-clean" required>
                             </div>
                             <div class="form-group no-border">
-                              <label for="mes-text">Message</label>
-                              <textarea id="mes-text" placeholder="..." name="message"
+                              <label for="pesan">Message</label>
+                              <textarea id="pesan" placeholder="..." name="pesan"
                                 class="form-control form-control-outline thick form-success-clean" required></textarea>
-
-                              <div>
-                                <p class="message-ok invisible form-text-feedback form-success-visible">
-                                  Your message has been sent, thank you.</p>
-                              </div>
                             </div>
-
-                            <div class="btns">
-                              <button id="submit-message" class="btn btn-normal btn-white btn-round btn-full email_b"
-                                name="submit_message">
-                                <span class="txt">Send</span>
-                                <span class="arrow-icon"></span>
-                              </button>
+                            @if (session()->has('pesan'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session()->get('pesan') }}
                             </div>
+                            @endif
+                            <button type="submit" class="btn btn-normal btn-white btn-round btn-full email_b" value="submit">Send</button>
+                            @csrf
                           </form>
                         </div>
                       </div>

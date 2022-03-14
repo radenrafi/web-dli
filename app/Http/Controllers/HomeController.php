@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\About;
 use App\Models\Colaboration;
+use App\Models\Contact;
+use App\Models\Product;
 use App\Models\Research;
 use App\Models\Roadmap;
 use App\Models\Target;
@@ -32,6 +34,8 @@ class HomeController extends Controller
         $roadmaps = Roadmap::all();
         $topResearchs = TopResearch::all();
         $colaborations = Colaboration::all();
+        $products = Product::all();
+        $contacts = Contact::all();
         return view('welcome', [
             'abouts' => $abouts,
             'artikels' => $artikels,
@@ -39,7 +43,9 @@ class HomeController extends Controller
             'researchs' => $researchs,
             'roadmaps' => $roadmaps,
             'topResearchs' => $topResearchs,
-            'colaborations' => $colaborations
+            'colaborations' => $colaborations,
+            'products' => $products,
+            'contacts' => $contacts
         ]);
     }
     public function index()
@@ -108,5 +114,10 @@ class HomeController extends Controller
     {
         $roadmaps = Roadmap::all();
         return view('roadmap.detailRoadmap', ['roadmaps' => $roadmaps]);
+    }
+    public function product($id)
+    {
+        $product = Product::find($id);
+        return view('product.show', ['product' => $product]);
     }
 }

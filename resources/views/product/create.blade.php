@@ -5,11 +5,18 @@
 @section('content')
 <main class="container">
     <h3 class="text-center">Product</h3>
-    <form action="#" method="POST" enctype="multipart/form-data" class="form">
+    <form action="{{ url('admin/product') }}" method="POST" enctype="multipart/form-data" class="form">
         <div class="form-group">
-            <label for="icon">icon Pendukung</label>
-            <input type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" id="icon" value="{{old('icon')}}">
-            @error('icon')
+            <label for="logo">Logo</label>
+            <input type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" id="logo" value="{{old('logo')}}">
+            @error('logo')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" value="{{old('nama')}}">
+            @error('nama')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -48,7 +55,6 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-
         <div class="form-group">
             <label for="enviroment">Enviroment</label>
             <input type="text" class="form-control @error('enviroment') is-invalid @enderror" name="enviroment" id="enviroment" value="{{old('enviroment')}}">
@@ -60,6 +66,13 @@
             <label for="gambar">Gambar Pendukung</label>
             <input type="file" class="form-control @error('gambar') is-invalid @enderror" name="gambar" id="gambar" value="{{old('gambar')}}">
             @error('gambar')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="url">Website</label>
+            <input type="text" class="form-control @error('url') is-invalid @enderror" name="url" id="url" value="{{old('url')}}">
+            @error('url')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

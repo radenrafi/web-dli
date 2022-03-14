@@ -51,7 +51,7 @@
     <!-- End of menu icon toggler -->
 
     <!-- Begin of logo/brand -->
-    <a class="navbar-brand" href="http://dli.um.ac.id/">
+    <a class="navbar-brand" href="{{ url('/') }}">
       <span class="logo">
         <img class="light-logo" src="{{asset('/img/logo.png')}}" alt="Logo DLI">
       </span>
@@ -68,7 +68,7 @@
       <nav class="navbar-mainmenu">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="http://dli.um.ac.id/">Home
+            <a class="nav-link" href="{{ url('/') }}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -86,19 +86,19 @@
       <nav class="navbar-sidebar ">
         <ul class="navbar-nav" id="qmenu">
           <li class="nav-item" data-menuanchor="home">
-            <a href="http://dli.um.ac.id/#home">
+            <a href="{{ url('/#home') }}">
               <i class="icon ion-home"></i>
               <span class="txt">Home</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="about">
-            <a href="http://dli.um.ac.id/#about">
+            <a href="{{ url('/#about') }}">
               <i class="icon ion-information"></i>
               <span class="txt">About</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="contact">
-            <a href="http://dli.um.ac.id/#contact">
+            <a href="{{ url('/#contact') }}">
               <i class="icon ion-ios-telephone-outline"></i>
               <span class="txt">Contact</span>
             </a>
@@ -117,7 +117,7 @@
       <div class="section-cover-tier mask-black" style="background-image:url('{{asset('/img/bg.png')}}')">
         <div class="cover-content">
           <div class="title-desc">
-            <h2 class="display-4 display-title">Judul</h2>
+            <h2 class="display-4 display-title">{{ $product->nama }}</h2>
             <p></p>
           </div>
         </div>
@@ -146,14 +146,14 @@
                     <div class="images">
                       <div class="img-avatar-alpha">
                         <div class="img-1 shadow">
-                          <img class="img" src="{{asset('/img/products/umoocs.png')}}" alt="Logo Umoocs">
+                          <img class="img" src="{{ asset('/gambar-product/logo/'.$product->logo) }}" alt="Logo">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-12 mt-3">
-                  deskripsi singkat
+                  {{ $product->desc }}
                 </div>
 
                 <div class="col-12 mt-3">
@@ -163,7 +163,7 @@
                     </div>
                     <div class="col-12 col-lg-9 border rounded text-center p-3">
                       <p>
-                        isi baseline
+                        {{ $product->baseline }}
                       </p>
                     </div>
                   </div>
@@ -172,7 +172,7 @@
                       <h5>Target 2021</h5>
                     </div>
                     <div class="col-12 col-lg-9 border rounded p-3">
-                        isi target1
+                        {{ $product->target1 }}
                     </div>
                   </div>
                   <div class="row mb-2">
@@ -180,7 +180,7 @@
                       <h5>Target 2022</h5>
                     </div>
                     <div class="col-12 col-lg-9 border rounded p-3">
-                        isi target2
+                        {{ $product->target2 }}
                     </div>
                   </div>
                   <div class="row mb-2">
@@ -188,29 +188,31 @@
                       <h5>Target 2023</h5>
                     </div>
                     <div class="col-12 col-lg-9 border rounded p-3">
-                        isi target3
+                        {{ $product->target3 }}
                     </div>
                   </div>
                   <div class="row mb-2">
                     <div class="col-12 border rounded p-3">
-                        isi enviroment
+                        {{ $product->environment }}
                     </div>
                   </div>
                 </div>
-
+                @if (isset($product->gambar))
                 <div class="col-12 mt-3">
-                  <img src="{{asset('/img/products/umoocs1.png')}}" class="img-fluid" alt="umoocs 1">
+                    <img src="{{asset('/gambar-product/pendukung/'.$product->gambar) }}" class="img-fluid" alt="gambar">
                 </div>
-
+                @endif
+                @if (isset($product->url))
                 <!-- Action button -->
                 <div class="col-12 btns-action mt-5">
                     <h5 class="mb-3">More Information</h5>
 
-                    <a class="btn btn-transp-arrow btn-outline btn-primary btn-round" target="_blank" href="http://umoocs.um.ac.id/">
+                    <a class="btn btn-transp-arrow btn-outline btn-primary btn-round" target="_blank" href="{{ $product->url }}">
                         <span class="icon arrow-right"></span>
                         <span class="text">Website</span>
                     </a>
                 </div>
+                @endif
               </div>
 
 

@@ -129,11 +129,6 @@
                                     <span class="txt">Roadmap</span>
                                 </a>
                                 </li>
-                                <li class="nav-item" data-menuanchor="organization">
-                                <a href="#organization">
-                                    <i class="icon ion-ios-people-outline bg-dark"></i>
-                                    <span class="txt">Organization</span>
-                                </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="products">
                                 <a href="{{ url('/admin/product')}}">
@@ -141,11 +136,16 @@
                                     <span class="txt">Products</span>
                                 </a>
                                 </li>
-
                                 <li class="nav-item" data-menuanchor="contact">
                                 <a href="{{ url('/admin/contact')}}">
                                     <i class="icon ion-ios-telephone-outline bg-dark"></i>
                                     <span class="txt">Contact</span>
+                                </a>
+                                </li>
+                                <li class="nav-item" data-menuanchor="contact">
+                                <a href="{{ url('/admin/message')}}">
+                                    <i class="icon ion-ios-telephone-outline bg-dark"></i>
+                                    <span class="txt">Message</span>
                                 </a>
                                 </li>
                             </ul>
