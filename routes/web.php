@@ -16,7 +16,9 @@ use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\TargetController;
 use App\Http\Controllers\TopResearchController;
 use App\Models\CustomerService;
+use App\Models\Product;
 use Illuminate\Support\Facades\App;
+use Faker\Factory as Faker;
 
 /*
 |--------------------------------------------------------------------------

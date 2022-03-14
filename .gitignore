@@ -3,6 +3,10 @@
 /public/storage
 /public/gambar-artikel
 /public/gambar-research
+/public/gambar-colaboration
+/public/gambar-roadmap
+/public/gambar-topResearch
+/public/gambar-product
 /storage/*.key
 /vendor
 .env
