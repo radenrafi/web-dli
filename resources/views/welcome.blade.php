@@ -395,7 +395,7 @@
                 <div class="item row justify-content-between">
                   @for ($i=0; $i<4; $i++)
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
-                      <div class="section-content anim translateUp">
+                    <div class="section-content anim translateUp">
                         <div class="images text-center">
                           <div class="img-avatar-alpha">
                             <div class="img-1 shadow">
@@ -411,7 +411,8 @@
                       </div>
                     </div>
                   @endfor
-              </div>
+                </div>
+            </div>
 
               <!-- Arrows scroll down/up -->
               <footer class="section-footer scrolldown">
