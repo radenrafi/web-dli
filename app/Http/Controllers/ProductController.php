@@ -72,7 +72,7 @@ class ProductController extends Controller
             $product->url = $validateData['url'];
         }
         $product->save();
-        return redirect()->route('product.index')->with('pesan', "Product Berhasil Ditambah");
+        return redirect()->route('product.create')->with('pesan', "Product Berhasil Ditambah");
     }
 
     /**

@@ -393,7 +393,7 @@
                 <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
                 <!-- begin of item -->
                 <div class="item row justify-content-between">
-                  @for ($i=0; $i<4; $i++)
+                  @foreach ($topResearchs as $topResearch)
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
                     <div class="section-content anim translateUp">
                         <div class="images text-center">
@@ -410,248 +410,23 @@
                         </div>
                       </div>
                     </div>
-                  @endfor
-                </div>
-            </div>
+                  </div>
+                  @endforeach
+              </div>
 
               <!-- Arrows scroll down/up -->
               <footer class="section-footer scrolldown">
-                <a class="down">
-                  <span class="icon"></span>
-                  <span class="txt">Roadmap</span>
-                </a>
-              </footer>
-            </div>
-            <!-- End of section wrapper -->
-          </div>
-
-          <div class="section section-twoside fp-auto-height-responsive " data-section="roadmap">
-            <!-- Begin of section wrapper -->
-            <div class="section-wrapper twoside">
-
-              <!-- title -->
-              @foreach ($roadmaps as $roadmap)
-              <div class="section-title text-center ">
-                <h5 class="title-bg">Roadmap</h5>
-                <div class="title-abs">
-                  <h2 class="display-title">Roadmap Riset DLI 3 Tahun ke Depan</h2>
-                  <h5>({{ $roadmap->tahun }})</h5>
-                </div>
-              </div>
-              <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
-              <!-- begin of item -->
-              <div class="item row justify-content-center">
-                <div class="col-12">
-                  <img src="{{asset('/gambar-roadmap/'.$roadmap->gambar)}}" class="img-fluid" alt="Gambar Roadmap DLI">
-                </div>
-              </div>
-              @endforeach
-              <!-- end of item -->
-              <div class="text-center">
-
-                <a class="btn btn-transp-arrow btn-outline btn-sm btn-primary btn-round" href="{{ url('/roadmap') }}">
-                  <span class="icon arrow-right"></span>
-                  <span class="text">View Detail</span>
-                </a>
-              </div>
-            </div>
-            <!-- End of section wrapper -->
-          </div>
-
-          <div class="section section-description fp-auto-height-responsive " data-section="organization">
-            <!-- Begin of section wrapper -->
-            <div class="section-wrapper center-vh dir-col anim">
-              <!-- title -->
-              <div class="section-title text-center">
-                <h5 class="title-bg">Organization</h5>
-                <h2 class="display-title anim-2">Organisasi DLI</h2>
-              </div>
-
               <!-- content -->
-              <div class="section-content anim text-center">
-                <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
-                <!-- begin of item -->
-                <div class="item row justify-content-center">
-                  <div class="col-8 col-sm-6">
                     <img src="{{asset('/img/organization.png')}}" class="img-fluid" alt="Bagan Organisasi DLI">
-                  </div>
-                </div>
-                <!-- end of item -->
-              </div>
-
             </div>
-            <!-- End of section wrapper -->
-          </div>
-
-          <div class="section section-description fp-auto-height-responsive " data-section="researcher">
-            <!-- Begin of section wrapper -->
             <div class="section-wrapper center-vh dir-col anim">
               <!-- title -->
               <div class="section-title text-center">`
                 <h5 class="title-bg">Researcher</h5>
                 <h2 class="display-title anim-2 mb-5">Collaboration Researchers</h2>
               </div>
-
-              <!-- content -->
-              {{--  <div class="section-content anim text-center">
-                <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
-                <!-- begin of item -->
-                <div class="item row justify-content-between mb-5">
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/arakawa.png')}}" alt="Foto Yutaka Arakawa">
-
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Yutaka Arakawa</h6>
-                            <h6 class="small">(Kyushu University, Japan)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/mark.png')}}" alt="Foto Mark Wong">
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Mark Wong</h6>
-                            <h6 class="small">(FX Media, Singapore)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/roslan.png')}}" alt="Foto Roslan">
-
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Roslan bin Saub</h6>
-                            <h6 class="small">(University Malaya, Malaysia)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end of item -->
-
-
-                <!-- begin of item -->
-                <div class="item row justify-content-between mb-5">
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/hirashima.png')}}" alt="Foto Tsukasa Hirashima">
-
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Tsukasa Hirashima</h6>
-                            <h6 class="small">(Hiroshima University, Japan)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/mazhar.png')}}" alt="Foto Mazhar Javed Awan">
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Mazhar Javed Awan</h6>
-                            <h6 class="small">(Lahore University, Pakistan)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end of item -->
-
-                <!-- begin of item -->
-                <div class="item row justify-content-between">
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/assad.png')}}" alt="Foto Assad">
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Rasha Assad</h6>
-                            <h6 class="small">(King AbdulAziz University, Arab Saudi)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/weishen.png')}}" alt="Foto Weishen Wu">
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Weishen Wu</h6>
-                            <h6 class="small">(Da-Yeh University, Taiwan)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/fadhili.png')}}" alt="Foto Fadhili Yahaya">
-
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Fadhili Yahaya</h6>
-                            <h6 class="small">(Mara Technology University, Malaysia)</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                </div>
-                <!-- end of item -->
-              </div>  --}}
-
               <div class="row">
-                  @for ($i=0; $i<9; $i++)
+                  @foreach ($colaborations as $colaboration)
                   <div class="col-12 col-sm-6 col-md-4">
                     <div class="section-content anim text-center">
                         <div class="images text-center">
@@ -667,11 +442,8 @@
                         </div>
                     </div>
                   </div>
-                  @endfor
+                  @endforeach
               </div>
-
-
-
             </div>
             <!-- End of section wrapper -->
           </div>
@@ -738,132 +510,6 @@
                     </div>
                   </div>
                   @endforeach
-
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/idbookstore.html" title="Idbookstore">
-                              <img class="img" src="{{asset('/img/products/idbookstore.png')}}" alt="Logo Idbookstore">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/koolinera.html" title="Koolinera">
-                              <img class="img" src="{{asset('/img/products/koolinera.png')}}" alt="Logo Koolinera">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end of item -->
-                <!-- begin of item -->
-                <div class="item row justify-content-between mb-3">
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/craftivity.html" title="Craftivity Game">
-                              <img class="img" src="{{asset('/img/products/craftivity.png')}}" alt="Logo Craftivity">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/vistalks.html" title="Vistalks">
-                              <img class="img" src="{{asset('/img/products/vistalks.png')}}" alt="Logo Vistalks">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/muse_akademi.html" title="Muse Akademi">
-                              <img class="img`" src="{{asset('/img/products/muse.png')}}" alt="Logo Muse Akademi">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end of item -->
-                <!-- begin of item -->
-                <div class="item row justify-content-between mb-3">
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href=". /product/labird.html" title="La Bird">
-                              <img class="img" src="{{asset('/img/products/labird.png')}}" alt="Logo La Bird">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/medisain.html" title="Medisain">
-                              <img class="img" src="{{asset('/img/products/medisain.png')}}" alt="Logo Medisain">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- img-frame-normal demo -->
-                  <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="./product/sensitif.html" title="Sensitif">
-                              <img class="img" src="{{asset('/img/products/sensitif.png')}}" alt="Logo Sensitif">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end of item -->
-              </div>
-
-
             </div>
             <!-- End of section wrapper -->
           </div>
