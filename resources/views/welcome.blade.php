@@ -413,6 +413,7 @@
                   </div>
                   @endforeach
               </div>
+              </div>
 
               <!-- Arrows scroll down/up -->
               <footer class="section-footer scrolldown">
