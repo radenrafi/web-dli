@@ -51,7 +51,7 @@
     <!-- End of menu icon toggler -->
 
     <!-- Begin of logo/brand -->
-    <a class="navbar-brand" href="http://dli.um.ac.id/">
+    <a class="navbar-brand" href="{{ url('/') }}">
       <span class="logo">
         <img class="light-logo" src="{{asset('/img/logo.png')}}" alt="Logo DLI">
       </span>
@@ -68,7 +68,7 @@
       <nav class="navbar-mainmenu">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="http://dli.um.ac.id/">Home
+            <a class="nav-link" href="{{ url('/') }}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -86,19 +86,19 @@
       <nav class="navbar-sidebar ">
         <ul class="navbar-nav" id="qmenu">
           <li class="nav-item" data-menuanchor="home">
-            <a href="http://dli.um.ac.id/#home">
+            <a href="{{ url('/#home') }}">
               <i class="icon ion-home"></i>
               <span class="txt">Home</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="about">
-            <a href="http://dli.um.ac.id/#about">
+            <a href="{{ url('/#about') }}">
               <i class="icon ion-information"></i>
               <span class="txt">About</span>
             </a>
           </li>
           <li class="nav-item" data-menuanchor="contact">
-            <a href="http://dli.um.ac.id/#contact">
+            <a href="{{ url('/#contact') }}">
               <i class="icon ion-ios-telephone-outline"></i>
               <span class="txt">Contact</span>
             </a>
@@ -117,8 +117,8 @@
       <div class="section-cover-tier mask-black" style="background-image:url('{{asset('/img/bg.png')}}')">
         <div class="cover-content">
           <div class="title-desc">
-            <h2 class="display-4 display-title">Platform Komunikasi</h2>
-            <p>(Chat-based Collaboration Learning Platform)</p>
+            <h2 class="display-4 display-title">{{ $topResearch->subJudul }}</h2>
+            <p>{{ $topResearch->judul }}</p>
           </div>
         </div>
       </div>
@@ -148,18 +148,14 @@
                         <div class="img-1 shadow">
                             {{--                    |  --}}
                             {{--  image yg diganti V  --}}
-                          <img class="img" src="{{asset('/img/topics2.png')}}" alt="Image">
+                          <img class="img" style="width: 10em; height: 10em" src="{{asset('/gambar-topResearch/'.$topResearch->gambar) }}" alt="Image">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-12 mt-3">
-                  <p>
-                      {{--                    |  --}}
-                    {{--  paragraf yg diganti V  --}}
-                    Layanan pada platform edukasi yang melibatkan komunikasi seperti chat untuk memberikan kemudahan dan membantu pembelajaran mudah dipahami dan keterlibatan secara emosional dan interaksi social seperti web-based video chat apps. Kemampuan menerima multiuser dan multi region dari pengguna global (seluruh dunia) dalam aktivitas belajar, memungkinkan proses komunikasi langsung antara professor (expert) dan peserta didik pada forum atau ruang diskusi online. Terdapat pula layanan secara massif melibatkan banyak pengguna dengan solusi teknologi atau metode yang dapat mengelola audio/video serta percakapan teks. Pengguna ruang komunikasi (char room) untuk melakukan pembahasan dengan group kecil atau I on I chat serta kemudahan share screen materi dan proses perekaman proses belajar.
-                  </p>
+                  {!! $topResearch->isi !!}
                 </div>
               </div>
 

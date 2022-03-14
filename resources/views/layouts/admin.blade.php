@@ -117,8 +117,8 @@
                                         <span class="txt">Top Research</span>
                                     </a>
                                 </li>
-                                <li class="nav-item" data-menuanchor="colaborationResearcher">
-                                    <a href="{{ url('/admin/colaborationResearcher') }}">
+                                <li class="nav-item" data-menuanchor="colaboration">
+                                    <a href="{{ url('/admin/colaboration') }}">
                                         <i class="icon ion-ios-people-outline bg-dark"></i>
                                         <span class="txt">Colaboration Research</span>
                                     </a>

@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ColaborationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\TargetController;
+use App\Http\Controllers\TopResearchController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -38,6 +40,9 @@ Route::get('/artikel', [HomeController::class, 'indexArtikel'])->name('artikel')
 Route::get('/artikel/kategori/{kategori}', [HomeController::class, 'kategoriArtikel']);
 Route::get('/artikel/{id}', [HomeController::class, 'showArtikel'])->name('showArtikel');
 
+// topResearch
+Route::get('/topResearch/{id}', [HomeController::class, 'showTopResearch'])->name('showTopResearch');
+
 // roadmap
 Route::get('/roadmap', [HomeController::class, 'roadmap']);
 
@@ -48,17 +53,5 @@ Route::resource('/admin/about', AboutController::class)->middleware('auth');
 Route::resource('/admin/target', TargetController::class)->middleware('auth');
 Route::resource('/admin/research', ResearchController::class)->middleware('auth');
 Route::resource('/admin/roadmap', RoadmapController::class)->middleware('auth');
-
-// punya pras
-Route::get('/admin/product', function () {
-    return view('product.index');
-});
-Route::get('/admin/product/tambah', function () {
-    return view('product.create');
-});
-Route::get('/admin/product/show', function () {
-    return view('product.show');
-});
-Route::get('/admin/contact', function () {
-    return view('contact.create');
-});
+Route::resource('/admin/topResearch', TopResearchController::class)->middleware('auth');
+Route::resource('/admin/colaboration', ColaborationController::class)->middleware('auth');

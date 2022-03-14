@@ -14,12 +14,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-            <a class="btn btn-primary mb-2" href="{{ url('/admin/tambahTopResearch') }}" role="button">Tambah</a>
+            <a class="btn btn-primary mb-2" href="{{ url('/admin/topResearch/create') }}" role="button">Tambah</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Gambar</th>
                         <th>Judul</th>
                         <th>Singkatan</th>
                         <th>Sub Judul</th>
@@ -28,29 +27,28 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    @forelse ($topResearchs as $topResearch)
                     <tr>
-                        <th>No</th>
-                        <th>Gambar</th>
-                        <th><a href="#">Judul</a></th>
-                        <th>Singkatan</th>
-                        <th>Sub Judul</th>
+                        <th>{{ $loop->iteration }}</th>
+                        <th><a href="{{url('/admin/topResearch/'.$topResearch->id)}}">{{ $topResearch->judul }}</a></th>
+                        <th>{{ $topResearch->singkatan }}</th>
+                        <th>{{ $topResearch->subJudul }}</th>
                         <th>
-                            <a href="#" class="btn btn-primary justify-items-center" role="button">Edit</a>
+                            <a href="{{ url('/admin/topResearch/'.$topResearch->id.'/edit') }}" class="btn btn-primary justify-items-center" role="button">Edit</a>
                         </th>
                         <th>
-                            <form action="#" method="POST">
+                            <form action="{{ url('/admin/topResearch/'.$topResearch->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-danger justify-items-center">Hapus</button>
                             </form>
                         </th>
                     </tr>
-                    {{--  @empty  --}}
+                    @empty
                     <div class="alert alert-success" role="alert">
                         Tidak ada data
                     </div>
-                    {{--  @endforelse  --}}
+                    @endforelse
                 </tbody>
             </table>
         </div>
