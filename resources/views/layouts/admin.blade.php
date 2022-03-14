@@ -144,7 +144,7 @@
                                 </li>
                                 <li class="nav-item" data-menuanchor="contact">
                                 <a href="{{ url('/admin/message')}}">
-                                    <i class="icon ion-ios-telephone-outline bg-dark"></i>
+                                    <i class="icon ion-ios-email-outline bg-dark"></i>
                                     <span class="txt">Message</span>
                                 </a>
                                 </li>
