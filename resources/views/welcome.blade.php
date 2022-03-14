@@ -216,7 +216,7 @@
               <div class="section-content reduced anim text-center">
                 <div class="row align-items-center article-row">
                     @forelse ($artikels as $artikel)
-                    <div class="col-8 col-md-5 article-column">
+                    <div class="col-12 col-sm-8 col-md-5 mb-2 article-column">
                         <div class="card article-card h-100">
                             <img src="{{ asset("gambar-artikel/$artikel->gambar") }}" style="height:150px;" class="article-card-img" alt="...">
                             <div class="article-card-body">
@@ -231,7 +231,7 @@
                     @endforelse
 
                     {{--  button view all  --}}
-                    <div class="col-8 col-md-2 article-button">
+                    <div class="col-12 col-8 col-md-2 article-button">
                         <a href="{{ url('/artikel') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
@@ -393,27 +393,24 @@
                 <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
                 <!-- begin of item -->
                 <div class="item row justify-content-between">
-                  <!-- img-frame-normal demo -->
-                  @foreach ($topResearchs as $topResearch)
+                  @for ($i=0; $i<4; $i++)
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
-                    <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <a href="{{ url('/topResearch/'.$topResearch->id)}}" title="Pembelajaran Daring (Online Learning-based Artificial Intelligence)">
-                              <img class="img" style="width: 8em; height: 8em" src="{{asset('/gambar-topResearch/'.$topResearch->gambar)}}" alt="Image">
-                            </a>
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>{{ $topResearch->singkatan }}</h6>
+                      <div class="section-content anim translateUp">
+                        <div class="images text-center">
+                          <div class="img-avatar-alpha">
+                            <div class="img-1 shadow">
+                              <a href="topic/olai.html" title="Pembelajaran Daring (Online Learning-based Artificial Intelligence)">
+                                <img class="img" src="{{asset('/img/topics1.png')}}" alt="Image">
+                              </a>
+                            </div>
+                            <div class="legend text-center pos-abs">
+                              <h6>OLAI</h6>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  @endforeach
-                </div>
-                <!-- end of item -->
+                  @endfor
               </div>
 
               <!-- Arrows scroll down/up -->
@@ -495,7 +492,7 @@
               </div>
 
               <!-- content -->
-              <div class="section-content anim text-center">
+              {{--  <div class="section-content anim text-center">
                 <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
                 <!-- begin of item -->
                 <div class="item row justify-content-between mb-5">
@@ -557,18 +554,7 @@
                 <div class="item row justify-content-between mb-5">
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
                     <div class="section-content anim translateUp">
-                      <div class="images text-center">
-                        <div class="img-avatar-alpha">
-                          <div class="img-1 shadow">
-                            <img class="img" src="{{asset('/img/researchers/gavin.png')}}" alt="Foto Gavin Brown">
 
-                          </div>
-                          <div class="legend text-center pos-abs">
-                            <h6>Gavin Brown</h6>
-                            <h6 class="small">(Auckland University, New Zealand)</h6>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <!-- img-frame-normal demo -->
@@ -661,7 +647,29 @@
                   <!-- img-frame-normal demo -->
                 </div>
                 <!-- end of item -->
+              </div>  --}}
+
+              <div class="row">
+                  @for ($i=0; $i<9; $i++)
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="section-content anim text-center">
+                        <div class="images text-center">
+                            <div class="img-avatar-alpha">
+                                <div class="img-1 shadow">
+                                    <img class="img" src="{{asset('/img/researchers/gavin.png')}}" alt="Foto Gavin Brown">
+                                </div>
+                                <div class="legend text-center pos-abs">
+                                    <h6>Gavin Brown</h6>
+                                    <h6 class="small">(Auckland University, New Zealand)</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  @endfor
               </div>
+
+
 
             </div>
             <!-- End of section wrapper -->
