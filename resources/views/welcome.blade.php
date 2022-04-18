@@ -197,23 +197,13 @@
 
                         <!-- content -->
                         <div class="row d-flex justify-content-center m-4">
-                            <div class="row-11 col-md-6">
-                                <div class="col-md-12 d-flex align-items-center mb-5">
-                                    <div class="card bg-dark">
-                                        <iframe width="300" height="200" src="https://www.youtube.com/embed/rrvjYS-dxjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 d-flex align-items-center mb-5">
-                                    <div class="card bg-dark">
-                                        <iframe width="300" height="200" src="https://www.youtube.com/embed/rrvjYS-dxjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-11 col-md-6 d-flex align-items-center">
+                            @foreach ($videoProfils as $videoProfil)
+                            <div class="col-11 col-md-4 d-flex align-items-center mb-2">
                                 <div class="card bg-dark">
                                     <iframe width="300" height="200" src="https://www.youtube.com/embed/rrvjYS-dxjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
 
                     </div>
@@ -227,17 +217,6 @@
                     <div class="section-title text-center">
                         <h2 class="display-4 display-title anim-2">DLI Office</h2>
                     </div>
-
-                    <!--Controls-->
-                    <div class="about-controls">
-                        <a class="about-button" style="background-color:white; padding:1em; padding-left:1.2em; padding-right:1.2em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="prev">
-                            <i class="fa fa-chevron-left"></i>
-                        </a>
-                        <a class="about-button" style="background-color:white; padding:1em; padding-left:1.3em; padding-right:1.3em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="next">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-                    </div>
-                    <!--/.Controls-->
 
                     <div id="multi-item-example" class="carousel slide carousel-multi item" data-ride="carousel">
                         <!--Indicators-->
@@ -341,6 +320,18 @@
                         {{--  /. slides  --}}
 
                     </div>
+                    
+                    <!--Controls-->
+                    <div class="about-controls mt-4">
+                        <a class="about-button" style="background-color:white; padding:1em; padding-left:1.2em; padding-right:1.2em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="prev">
+                            <i class="fa fa-chevron-left"></i>
+                        </a>
+                        <a class="about-button" style="background-color:white; padding:1em; padding-left:1.3em; padding-right:1.3em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="next">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    <!--/.Controls-->
+
                 </div>
 
                 </div>

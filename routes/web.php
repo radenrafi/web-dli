@@ -9,12 +9,15 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ColaborationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CustomerServiceController;
+use App\Http\Controllers\GambarProfilController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\RoadmapController;
 use App\Http\Controllers\TargetController;
 use App\Http\Controllers\TopResearchController;
+use App\Http\Controllers\VideoProfilController;
 use App\Models\CustomerService;
 use App\Models\Product;
 use Illuminate\Support\Facades\App;
@@ -53,7 +56,7 @@ Route::get('/topResearch/{id}', [HomeController::class, 'showTopResearch'])->nam
 Route::get('/roadmap', [HomeController::class, 'roadmap']);
 
 // product
-Route::get('/product/{id}', [HomeController::class, 'product']);
+// Route::get('/product/{id}', [HomeController::class, 'product']);
 
 // customer service
 Route::post('/message', [CustomerServiceController::class, 'store']);
@@ -71,3 +74,6 @@ Route::resource('/admin/topResearch', TopResearchController::class)->middleware(
 Route::resource('/admin/colaboration', ColaborationController::class)->middleware('auth');
 Route::resource('/admin/product', ProductController::class)->middleware('auth');
 Route::resource('/admin/contact', ContactController::class)->middleware('auth');
+Route::resource('/admin/profilGambar', GambarProfilController::class)->middleware('auth');
+Route::resource('/admin/profilVideo', VideoProfilController::class)->middleware('auth');
+Route::resource('/admin/layanan', LayananController::class)->middleware('auth');

@@ -1,11 +1,8 @@
 @extends('layouts.admin')
 
-@section('title', 'Produk')
-
 @section('content')
-<div class="container">
-    <h3 class="text-center">Produk</h3>
 
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-11">
             @if (session()->has('pesan'))
@@ -14,7 +11,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-            <a class="btn btn-primary mb-2" href="{{ url('admin/product/create') }}" role="button">Tambah</a>
+            <a class="btn btn-primary" href="{{ url('/admin/layanan/create') }}" role="button">Tambah Layanan</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -27,17 +24,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($products as $product)
+                    @forelse ($layanans as $layanan)
                     <tr>
                         <th>{{ $loop->iteration }}</th>
-                        <th>{{ $product->nama }}</th>
-                        <th>{{ $product->gambar }}</th>
-                        <th>{{ $product->link }}</th>
+                        <th>{{ $layanan->nama }}</th>
+                        <th>{{ $layanan->gambar }}</th>
+                        <th>{{ $layanan->link }}</th>
                         <th>
-                            <a href="{{ url('admin/product/'.$product->id.'/edit') }}" class="btn btn-primary justify-items-center" role="button">Edit</a>
+                            <a href="{{ url('/admin/layanan/'.$layanan->id.'/edit') }}" class="btn btn-success justify-items-center" role="button">Edit</a>
                         </th>
                         <th>
-                            <form action="{{ url('admin/product/'.$product->id) }}" method="POST">
+                            <form action="{{ url('/admin/layanan/'.$layanan->id) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-danger justify-items-center">Hapus</button>
@@ -53,5 +50,6 @@
             </table>
         </div>
     </div>
-    </div>
+</div>
+
 @endsection

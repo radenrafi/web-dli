@@ -87,7 +87,6 @@
                         <!-- Begin of sidebar nav menu params class: text-only / icon-only-->
                         <nav class="navbar-sidebar">
                             <ul class="navbar-nav" id="qmenu">
-
                                 <!-- Split dropend button -->
                                 <li class="nav-item" data-menuanchor="about">
                                     <div class="btn-group dropend">
@@ -106,25 +105,6 @@
                                         </ul>
                                     </div>
                                 </li>
-
-                                {{--
-                                <li class="nav-item" data-menuanchor="about">
-                                    <div class="dropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="true">
-                                            <i class="icon ion-information bg-dark"></i>
-                                            <span class="txt">Profile</span>
-                                        </a>
-
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <li><a class="dropdown-item" href="{{ url('/admin/about') }}">Information</a></li>
-                                            <li><a class="dropdown-item" href="#">Video</a></li>
-                                            <li><a class="dropdown-item" href="#">Office</a></li>
-                                            <li><a class="dropdown-item" href="{{ url('/admin/target') }}">Target</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                --}}
-
                                 <li class="nav-item" data-menuanchor="article">
                                     <a href="{{ url('/admin/artikel') }}">
                                     <i class="icon ion-ios-book bg-dark"></i>
