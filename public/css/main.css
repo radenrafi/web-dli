@@ -3292,7 +3292,7 @@ textarea {
     visibility: hidden; }
   .section .section-wrapper {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     padding-left: 16px;
     padding-right: 16px;
     margin-left: auto;
@@ -4622,6 +4622,7 @@ textarea {
 
 .display-title {
   margin-bottom: 1rem; }
+
 
 @media (max-width: 575px) {
   .text-right-sm {
