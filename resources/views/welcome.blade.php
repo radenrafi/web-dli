@@ -218,8 +218,6 @@
                         <h2 class="display-4 display-title anim-2">DLI Office</h2>
                     </div>
 
-
-
                     <div id="multi-item-example" class="carousel slide carousel-multi item" data-ride="carousel">
                         <!--Indicators-->
                         <ol class="carousel-indicators">
@@ -322,7 +320,7 @@
                         {{--  /. slides  --}}
 
                     </div>
-
+                    
                     <!--Controls-->
                     <div class="about-controls mt-4">
                         <a class="about-button" style="background-color:white; padding:1em; padding-left:1.2em; padding-right:1.2em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="prev">

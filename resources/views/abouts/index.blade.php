@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', 'About')
+@section('title', 'Profile')
 
 @section('content')
 <div class="container">
-    <h3 class="text-center">About</h3>
+    <h3 class="text-center">Profile Information</h3>
     <div class="row justify-content-center">
         <div class="col-md-11">
             {{-- <a class="btn btn-primary" href="{{ url('/admin/about/create') }}" role="button">Tambah About</a> --}}
