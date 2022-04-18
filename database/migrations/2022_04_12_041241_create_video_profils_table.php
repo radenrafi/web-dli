@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('video_profils', function (Blueprint $table) {
             $table->id();
-            $table->char('nama', 100);
-            $table->string('gambar');
+            $table->char('judul', 100);
             $table->string('link');
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('video_profils');
     }
 };

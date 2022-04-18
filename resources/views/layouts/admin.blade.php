@@ -87,17 +87,35 @@
                         <!-- Begin of sidebar nav menu params class: text-only / icon-only-->
                         <nav class="navbar-sidebar">
                             <ul class="navbar-nav" id="qmenu">
+                                <li class="nav-item" data-menuanchor="profilGambar">
+                                    <a href="{{ url('/admin/profilGambar') }}">
+                                        <i class="icon ion-information bg-dark"></i>
+                                        <span class="txt">Gambar Profil</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-menuanchor="profilGambar">
+                                    <a href="{{ url('/admin/profilVideo') }}">
+                                        <i class="icon ion-information bg-dark"></i>
+                                        <span class="txt">Video Profil</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-menuanchor="layanan">
+                                    <a href="{{ url('/admin/layanan') }}">
+                                        <i class="icon ion-information bg-dark"></i>
+                                        <span class="txt">Layanan</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-menuanchor="about">
+                                    <a href="{{ url('/admin/about') }}">
+                                        <i class="icon ion-information bg-dark"></i>
+                                        <span class="txt">About</span>
+                                    </a>
+                                </li>
                                 <li class="nav-item" data-menuanchor="article">
                                     <a href="{{ url('/admin/artikel') }}">
                                     <i class="icon ion-ios-book bg-dark"></i>
                                     <span class="txt">Article</span>
                                     </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="about">
-                                <a href="{{ url('/admin/about') }}">
-                                    <i class="icon ion-information bg-dark"></i>
-                                    <span class="txt">About</span>
-                                </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="target_ae">
                                 <a href="{{ url('/admin/target') }}">

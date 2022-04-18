@@ -11,6 +11,7 @@ use App\Models\Research;
 use App\Models\Roadmap;
 use App\Models\Target;
 use App\Models\TopResearch;
+use App\Models\VideoProfil;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
@@ -36,6 +37,7 @@ class HomeController extends Controller
         $colaborations = Colaboration::all();
         $products = Product::all();
         $contacts = Contact::all();
+        $videoProfils = VideoProfil::latest()->limit(3)->get();
         return view('welcome', [
             'abouts' => $abouts,
             'artikels' => $artikels,
@@ -45,7 +47,8 @@ class HomeController extends Controller
             'topResearchs' => $topResearchs,
             'colaborations' => $colaborations,
             'products' => $products,
-            'contacts' => $contacts
+            'contacts' => $contacts,
+            'videoProfils' => $videoProfils
         ]);
     }
     public function index()

@@ -37,42 +37,22 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'logo' => 'required|file|image|max:1000',
             'nama' => 'required|max:100',
-            'desc' => 'required',
-            'baseline' => 'required',
-            'target1' => 'required',
-            'target2' => 'required',
-            'target3' => 'required',
-            'enviroment' => 'required',
             'gambar' => 'file|image|max:1000',
-            'url' => ''
+            'link' => 'required'
         ]);
-        $extLogo = $request->logo->getClientOriginalExtension();
-        $pathLogo = "logo-".time().".".$extLogo;
-        $pathStore = $request->logo->move(public_path('gambar-product/logo'), $pathLogo);
-        if (isset($validateData['gambar'])) {
-            $extGambar = $request->gambar->getClientOriginalExtension();
-            $pathGambar = "gambar-".time().".".$extGambar;
-            $pathStore = $request->gambar->move(public_path('gambar-product/pendukung'), $pathGambar);
-        }
+
+        $extGambar = $request->gambar->getClientOriginalExtension();
+        $pathGambar = "gambar-".time().".".$extGambar;
+        $pathStore = $request->gambar->move(public_path('gambar-product'), $pathGambar);
+
         $product = new Product();
-        $product->logo = $pathLogo;
         $product->nama = $validateData['nama'];
-        $product->desc = $validateData['desc'];
-        $product->baseline = $validateData['baseline'];
-        $product->target1 = $validateData['target1'];
-        $product->target2 = $validateData['target2'];
-        $product->target3 = $validateData['target3'];
-        $product->environment = $validateData['enviroment'];
-        if (isset($validateData['gambar'])) {
-            $product->gambar = $pathGambar;
-        }
-        if (isset($validateData['url'])) {
-            $product->url = $validateData['url'];
-        }
+        $product->gambar = $pathGambar;
+        $product->link = $validateData['link'];
         $product->save();
-        return redirect()->route('product.create')->with('pesan', "Product Berhasil Ditambah");
+
+        return redirect()->route('product.index')->with('pesan', "Product Berhasil Ditambah");
     }
 
     /**
@@ -107,45 +87,20 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $validateData = $request->validate([
-            'logo' => 'required|file|image|max:1000',
             'nama' => 'required|max:100',
-            'desc' => 'required',
-            'baseline' => 'required',
-            'target1' => 'required',
-            'target2' => 'required',
-            'target3' => 'required',
-            'enviroment' => 'required',
             'gambar' => 'file|image|max:1000',
-            'url' => ''
+            'link' => 'required'
         ]);
-        $pathLogo = $product->logo;
-        $pathStore = $request->logo->move(public_path('gambar-product/logo'), $pathLogo);
-        if (isset($validateData['gambar'])) {
-            if (isset($product->gambar)) {
-                $pathGambar = $product->gambar;
-                $pathStore = $request->gambar->move(public_path('gambar-product/pendukung'), $pathGambar);
-            } else {
-                $extGambar = $request->gambar->getClientOriginalExtension();
-                $pathGambar = "gambar-".time().".".$extGambar;
-                $pathStore = $request->gambar->move(public_path('gambar-product/pendukung'), $pathGambar);
-            }
-        }
+
+        $pathGambar = $product->gambar;
+        $pathStore = $request->gambar->move(public_path('gambar-product'), $pathGambar);
+
         $product = Product::find($product->id);
-        $product->logo = $pathLogo;
         $product->nama = $validateData['nama'];
-        $product->desc = $validateData['desc'];
-        $product->baseline = $validateData['baseline'];
-        $product->target1 = $validateData['target1'];
-        $product->target2 = $validateData['target2'];
-        $product->target3 = $validateData['target3'];
-        $product->environment = $validateData['enviroment'];
-        if (isset($validateData['gambar'])) {
-            $product->gambar = $pathGambar;
-        }
-        if (isset($validateData['url'])) {
-            $product->url = $validateData['url'];
-        }
+        $product->gambar = $pathGambar;
+        $product->link = $validateData['link'];
         $product->save();
+
         return redirect()->route('product.index')->with('pesan', "Product Berhasil Diedit");
     }
 
