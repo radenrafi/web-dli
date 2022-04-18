@@ -113,36 +113,10 @@ $textBlack: #1d1d1d;
                     @include article-card-line;
                 }
                 @media (max-width: 576px) {
-                    background-color: rgba(255, 255, 255, 0);
-                    border: none;
                     .article-user-img{
-                        height: 150px;
-                        width: 200px;
-                }
-                .article-user-header{
-                    @include article-info;
-                    .article-user-header-date{
-                        @include article-info-date;
+                        margin: 10px auto;
+                        
                     }
-                }
-                .article-user-content{
-                    .article-user-title{
-                        font-size: 1.5rem;
-                        font-weight: bolder;
-                        color: $textWhite;
-                    }
-                    .article-user-desc{
-                        // opacity: .9;
-                    }
-                }
-                .label{
-                    .article-user-label{
-                        @include article-label;
-                    }
-                }
-                .article-card-line{
-                    @include article-card-line;
-                }
                 }
             }
             .label{

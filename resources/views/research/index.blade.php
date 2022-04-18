@@ -4,6 +4,8 @@
 
 @section('content')
 <div class="container">
+    <h3 class="text-center">Research</h3>
+
     <div class="row justify-content-center">
         <div class="col-md-11">
             <a class="btn btn-primary" href="{{ url('/admin/research/create') }}" role="button">Tambah Research</a>

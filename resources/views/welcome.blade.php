@@ -18,34 +18,22 @@
         <link rel="stylesheet" href="{{asset('/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('/css/style-default.css')}}">
         <link rel="stylesheet" href="{{asset('/css/welcome.css')}}">
+
         <script src="{{asset('/js/vendor/modernizr-2.7.1.min.js')}}"></script>
     </head>
 
 
     <body id="menu" class="body-page">
-        <!-- page-loader -->
+        {{--  <!-- page-loader -->
         <div class="page-loader" id="page-loader">
           <div>
             <div class="icon ion-spin"></div>
             <p>loading</p>
           </div>
-        </div>
+        </div>  --}}
 
         <!-- BEGIN OF site header Menu -->
         <header class="page-header navbar page-header-alpha scrolled-white menu-right topmenu-right">
-          <!-- Begin of menu icon toggler -->
-          <button class="navbar-toggler site-menu-icon" id="navMenuIcon">
-            <!-- Available class : menu-icon-dot / menu-icon-thick /menu-icon-random -->
-            <span class="menu-icon menu-icon-random">
-              <span class="bars">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-              </span>
-            </span>
-          </button>
-          <!-- End of menu icon toggler -->
-
           <!-- Begin of logo/brand -->
           <a class="navbar-brand" href="{{ url('/') }}">
             <span class="logo">
@@ -60,24 +48,6 @@
 
           <!-- begin of menu wrapper -->
           <div class="all-menu-wrapper" id="navbarMenu">
-            <!-- Begin of hamburger mainmenu menu -->
-            <nav class="navbar-mainmenu">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ url('/') }}">Home
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="http://dli-eduventure.um.ac.id/" target="_blank">Eduventure</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="http://journal2.um.ac.id/index.php/jodli" target="_blank">JODLI</a>
-                </li>
-              </ul>
-            </nav>
-            <!-- End of hamburger mainmenu menu -->
-
             <!-- Begin of sidebar nav menu params class: text-only / icon-only-->
             <nav class="navbar-sidebar ">
               <ul class="navbar-nav" id="qmenu">
@@ -87,23 +57,17 @@
                     <span class="txt">Home</span>
                   </a>
                 </li>
+                <li class="nav-item" data-menuanchor="about">
+                    <a href="#about">
+                      <i class="icon ion-information"></i>
+                      <span class="txt">Profile</span>
+                    </a>
+                </li>
                 <li class="nav-item" data-menuanchor="article">
                     <a href="#article">
                       <i class="icon ion-ios-book"></i>
                       <span class="txt">Article</span>
                     </a>
-                </li>
-                <li class="nav-item" data-menuanchor="about">
-                  <a href="#about">
-                    <i class="icon ion-information"></i>
-                    <span class="txt">About</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-menuanchor="target_ae">
-                  <a href="#target1">
-                    <i class="icon ion-checkmark-circled"></i>
-                    <span class="txt">Target</span>
-                  </a>
                 </li>
                 <li class="nav-item" data-menuanchor="research">
                   <a href="#research">
@@ -129,7 +93,12 @@
                     <span class="txt">Products</span>
                   </a>
                 </li>
-
+                <li class="nav-item" data-menuanchor="service">
+                    <a href="#service">
+                      <i class="icon ion-ios-paper-outline"></i>
+                      <span class="txt">Service</span>
+                    </a>
+                </li>
                 <li class="nav-item" data-menuanchor="contact">
                   <a href="#contact">
                     <i class="icon ion-ios-telephone-outline"></i>
@@ -183,7 +152,7 @@
                     <div class="section-content">
                       <!-- illustartion -->
                       <div class="illustr zoomout-1">
-                        <img src="{{asset('/img/all-logo.png')}}" alt="Logo All">
+                        <img src="{{asset('/img/logo-home.png')}}" alt="Logo All">
                       </div>
                     </div>
                   </div>
@@ -191,17 +160,228 @@
                 </div>
               </div>
 
+            </div>
+            <!-- End of section wrapper -->
+          </div>
+
+        {{--  Begin of Profile  --}}
+            <div class="section section-description fp-auto-height-responsive" data-section="about">
+                <!-- Begin of section wrapper -->
+                    <div class="section-wrapper center-vh dir-col anim">
+                        <!-- title -->
+                        <div class="section-title text-center">
+                            <h5 class="title-bg">Profile</h5>
+                            <h2 class="display-4 display-title anim-2">Profile</h2>
+                        </div>
+
+                        <!-- content -->
+                        <div class="section-content reduced anim text-center">
+                            <!-- title and description -->
+                            <div class="title-desc anim-3">
+                                @foreach ($abouts as $about)
+                                {!! $about->isi !!}
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                <!-- End of section wrapper -->
+            </div>
+
+            <div class="section section-description fp-auto-height-responsive">
+                <!-- Begin of section wrapper -->
+                    <div class="section-wrapper center-vh dir-col anim">
+                        <!-- title -->
+                        <div class="section-title text-center">
+                            <h2 class="display-4 display-title anim-2">Video Profile</h2>
+                        </div>
+
+                        <!-- content -->
+                        <div class="row d-flex justify-content-center m-4">
+                            <div class="row-11 col-md-6">
+                                <div class="col-md-12 d-flex align-items-center mb-5">
+                                    <div class="card bg-dark">
+                                        <iframe width="300" height="200" src="https://www.youtube.com/embed/rrvjYS-dxjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 d-flex align-items-center mb-5">
+                                    <div class="card bg-dark">
+                                        <iframe width="300" height="200" src="https://www.youtube.com/embed/rrvjYS-dxjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-11 col-md-6 d-flex align-items-center">
+                                <div class="card bg-dark">
+                                    <iframe width="300" height="200" src="https://www.youtube.com/embed/rrvjYS-dxjg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                <!-- End of section wrapper -->
+            </div>
+
+            <div class="section section-description fp-auto-height-responsive about">
+                <!-- Begin of section wrapper -->
+                <div class="section-wrapper center-vh dir-col anim">
+                    {{--  title  --}}
+                    <div class="section-title text-center">
+                        <h2 class="display-4 display-title anim-2">DLI Office</h2>
+                    </div>
+
+                    <!--Controls-->
+                    <div class="about-controls">
+                        <a class="about-button" style="background-color:white; padding:1em; padding-left:1.2em; padding-right:1.2em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="prev">
+                            <i class="fa fa-chevron-left"></i>
+                        </a>
+                        <a class="about-button" style="background-color:white; padding:1em; padding-left:1.3em; padding-right:1.3em; margin:2em; border-radius: 3em; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" href="#multi-item-example" data-slide="next">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    <!--/.Controls-->
+
+                    <div id="multi-item-example" class="carousel slide carousel-multi item" data-ride="carousel">
+                        <!--Indicators-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                            <li data-target="#multi-item-example" data-slide-to="1"></li>
+                            <li data-target="#multi-item-example" data-slide-to="2"></li>
+                        </ol>
+                        <!--/.Indicators-->
+
+                        <!--Slides-->
+                        <div class="carousel-inner mt-4" role="listbox">
+
+                            {{--  first slide  --}}
+                            <div class="carousel-item active">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {{--  /.first slide  --}}
+
+                            {{--  second slide  --}}
+                            <div class="carousel-item">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {{--  /. second slide  --}}
+
+                            {{--  third slide  --}}
+                            <div class="carousel-item">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
+                                            alt="Card image cap">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {{--  /. third slide  --}}
+                        </div>
+                        {{--  /. slides  --}}
+
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+            {{--  target  --}}
+          @foreach ($targets as $target)
+          <div class="section section-description fp-auto-height-responsive">
+            <!-- Begin of section wrapper -->
+            <div class="section-wrapper center-vh dir-col anim">
+              <!-- title -->
+              <div class="section-title text-center">
+                <h5 class="title-bg">Target</h5>
+                <h3 class="display-4 display-title anim-2">{{ $target->judul }}</h3>
+              </div>
+
+              <!-- content -->
+              <div class="section-content reduced anim text-center">
+                <!-- title and description -->
+                <div class="title-desc anim-3">
+                    {!! $target->isi !!}
+                </div>
+
+              </div>
 
               <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
+              <br>
+              <br>
+              <br>
+              <footer class="px-2" style="border: 1px solid rgb(255, 255, 255); border-radius:.5em">
                 <a class="down">
                   <span class="icon"></span>
-                  <span class="txt">Scroll Down</span>
+                  <span class="txt">Target {{ $loop->iteration}}</span>
                 </a>
               </footer>
             </div>
             <!-- End of section wrapper -->
           </div>
+          @endforeach
+          {{--  ./target  --}}
+        {{--  Ends of Profile  --}}
 
           {{--  Begin of article  --}}
           <div class="section section-description fp-auto-height-responsive article" data-section="article">
@@ -243,81 +423,12 @@
                 </div>
               </div>
 
-              <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
-                <a class="down">
-                  <span class="icon"></span>
-                  <span class="txt">Article</span>
-                </a>
-              </footer>
+
             </div>
             <!-- End of section wrapper -->
           </div>
           {{--  End of article  --}}
 
-
-          <div class="section section-description fp-auto-height-responsive" data-section="about">
-            <!-- Begin of section wrapper -->
-            <div class="section-wrapper center-vh dir-col anim">
-              <!-- title -->
-              <div class="section-title text-center">
-                <h5 class="title-bg">About</h5>
-                <h2 class="display-4 display-title anim-2">PUIPT DLI UM</h2>
-              </div>
-
-              <!-- content -->
-              <div class="section-content reduced anim text-center">
-                <!-- title and description -->
-                <div class="title-desc anim-3">
-                @foreach ($abouts as $about)
-                {!! $about->isi !!}
-                @endforeach
-
-                </div>
-
-              </div>
-
-              <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
-                <a class="down">
-                  <span class="icon"></span>
-                  <span class="txt">Target</span>
-                </a>
-              </footer>
-            </div>
-            <!-- End of section wrapper -->
-          </div>
-
-          @foreach ($targets as $target)
-          <div class="section section-description fp-auto-height-responsive" data-section="target{{ $loop->iteration}}">
-            <!-- Begin of section wrapper -->
-            <div class="section-wrapper center-vh dir-col anim">
-              <!-- title -->
-              <div class="section-title text-center">
-                <h5 class="title-bg">Target</h5>
-                <h3 class="display-4 display-title anim-2">{{ $target->judul }}</h3>
-              </div>
-
-              <!-- content -->
-              <div class="section-content reduced anim text-center">
-                <!-- title and description -->
-                <div class="title-desc anim-3">
-                    {!! $target->isi !!}
-                </div>
-
-              </div>
-
-              <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
-                <a class="down">
-                  <span class="icon"></span>
-                  <span class="txt">Target</span>
-                </a>
-              </footer>
-            </div>
-            <!-- End of section wrapper -->
-          </div>
-          @endforeach
 
           <div class="section section-description fp-auto-height-responsive " data-section="research">
             <!-- Begin of section wrapper -->
@@ -396,16 +507,15 @@
                   @foreach ($topResearchs as $topResearch)
                   <div class="col-12 col-sm-6 col-md-3 center-vh">
                     <div class="section-content anim translateUp">
-                        <div class="images text-center">
-                          <div class="img-avatar-alpha">
-                            <div class="img-1 shadow">
-                              <a href="topic/olai.html" title="Pembelajaran Daring (Online Learning-based Artificial Intelligence)">
-                                <img class="img" src="{{asset('/img/topics1.png')}}" alt="Image">
-                              </a>
-                            </div>
-                            <div class="legend text-center pos-abs">
-                              <h6>OLAI</h6>
-                            </div>
+                      <div class="images text-center">
+                        <div class="img-avatar-alpha">
+                          <div class="img-1 shadow">
+                            <a href="{{ url('/topResearch/'.$topResearch->id)}}" title="{{ $topResearch->subJudul }} ({{ $topResearch->judul }})">
+                              <img class="img" style="width: 8em; height:8em" src="{{asset('/gambar-topResearch/'.$topResearch->gambar) }}" alt="Image">
+                            </a>
+                          </div>
+                          <div class="legend text-center pos-abs">
+                            <h6>{{ $topResearch->singkatan }}</h6>
                           </div>
                         </div>
                       </div>
@@ -415,14 +525,76 @@
               </div>
               </div>
 
-              <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
-              <!-- content -->
-                    <img src="{{asset('/img/organization.png')}}" class="img-fluid" alt="Bagan Organisasi DLI">
+
+              </footer>
             </div>
+            <!-- End of section wrapper -->
+          </div>
+
+          <div class="section section-twoside fp-auto-height-responsive " data-section="roadmap">
+            <!-- Begin of section wrapper -->
+            <div class="section-wrapper twoside">
+
+              <!-- title -->
+              @foreach ($roadmaps as $roadmap)
+              <div class="section-title text-center ">
+                <h5 class="title-bg">Roadmap</h5>
+                <div class="title-abs mb-4">
+                  <h2 class="display-title">Roadmap Riset DLI 3 Tahun ke Depan</h2>
+                  <h5>({{ $roadmap->tahun }})</h5>
+                </div>
+              </div>
+              <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
+              <!-- begin of item -->
+              <div class="item row justify-content-center">
+                <div class="col-12">
+                  <img src="{{asset('/gambar-roadmap/'.$roadmap->gambar)}}" class="img-fluid mt-5" alt="Gambar Roadmap DLI">
+                </div>
+              </div>
+              @endforeach
+              <!-- end of item -->
+              <div class="text-center">
+
+                <a class="btn btn-transp-arrow btn-outline btn-sm btn-primary btn-round" href="{{ url('/roadmap') }}">
+                  <span class="icon arrow-right"></span>
+                  <span class="text">View Detail</span>
+                </a>
+              </div>
+            </div>
+            <!-- End of section wrapper -->
+          </div>
+
+          <div class="section section-description fp-auto-height-responsive " data-section="organization">
+            <!-- Begin of section wrapper -->
             <div class="section-wrapper center-vh dir-col anim">
               <!-- title -->
-              <div class="section-title text-center">`
+              <div class="section-title text-center">
+                <h5 class="title-bg">Organization</h5>
+                <h2 class="display-title anim-2">Organisasi DLI</h2>
+              </div>
+
+              <!-- content -->
+              <div class="section-content anim text-center">
+                <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
+                <!-- begin of item -->
+                <div class="item row justify-content-center">
+                  <div class="col-8 col-sm-6">
+                    <img src="{{asset('/img/organization.png')}}" class="img-fluid" alt="Bagan Organisasi DLI">
+                  </div>
+                </div>
+                <!-- end of item -->
+              </div>
+
+            </div>
+            <!-- End of section wrapper -->
+          </div>
+
+          {{--  Begin of Researcher  --}}
+          <div class="section section-description fp-auto-height-responsive " data-section="researcher">
+            <!-- Begin of section wrapper -->
+            <div class="section-wrapper center-vh dir-col anim">
+              <!-- title -->
+              <div class="section-title text-center">
                 <h5 class="title-bg">Researcher</h5>
                 <h2 class="display-title anim-2 mb-5">Collaboration Researchers</h2>
               </div>
@@ -433,11 +605,11 @@
                         <div class="images text-center">
                             <div class="img-avatar-alpha">
                                 <div class="img-1 shadow">
-                                    <img class="img" src="{{asset('/img/researchers/gavin.png')}}" alt="Foto Gavin Brown">
+                                    <img class="img" style="width: 8em; height:8em" src="{{asset('/gambar-colaboration/'.$colaboration->gambar )}}" alt="Foto {{ $colaboration->nama }}">
                                 </div>
                                 <div class="legend text-center pos-abs">
-                                    <h6>Gavin Brown</h6>
-                                    <h6 class="small">(Auckland University, New Zealand)</h6>
+                                    <h6>{{ $colaboration->nama }}</h6>
+                                    <h6 class="small">({{ $colaboration->instansi }}, {{ $colaboration->negara }})</h6>
                                 </div>
                             </div>
                         </div>
@@ -448,7 +620,9 @@
             </div>
             <!-- End of section wrapper -->
           </div>
+          {{--  Ending of Researcher  --}}
 
+          {{--  Begin of Researcher  --}}
           <div class="section section-description fp-auto-height-responsive " data-section="sop_research">
             <!-- Begin of section wrapper -->
             <div class="section-wrapper center-vh dir-col anim">
@@ -470,17 +644,13 @@
                 <!-- end of item -->
               </div>
 
-              <!-- Arrows scroll down/up -->
-              <footer class="section-footer scrolldown">
-                <a class="down">
-                  <span class="icon"></span>
-                  <span class="txt">Products</span>
-                </a>
-              </footer>
+
             </div>
             <!-- End of section wrapper -->
           </div>
+          {{--  Begin of Researcher  --}}
 
+          {{--  Begin of Product  --}}
           <div class="section section-description fp-auto-height-responsive " data-section="products">
             <!-- Begin of section wrapper -->
             <div class="section-wrapper center-vh dir-col anim">
@@ -491,33 +661,78 @@
               </div>
 
               <!-- content -->
-              {{-- <div class="section-content anim text-center">
-                <!-- text or illustration order are manipulated via Bootstrap order-md-1, order-md-2 class -->
-                <!-- begin of item -->
-                <div class="item row justify-content-between mb-3"> --}}
-                  <!-- img-frame-normal demo -->
                 <div class="row">
-                    @foreach ($products as $product)
-                    <div class="col-12 col-sm-6 col-md-4">
-                      <div class="section-content anim text-center">
-                        <div class="images text-center">
-                          <div class="img-avatar-alpha">
-                            <div class="img-1 shadow">
-                              <a href="{{ url('product/'.$product->id) }}" title="{{ $product->nama }}">
-                                <img class="img" src="{{asset('/gambar-product/logo/'.$product->logo)}}" alt="Logo {{ $product->nama }}">
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    @endforeach
+                  <div class="col-12 col-md-4 mb-3">
+                    <a href="https://idbookstore.id/">
+                      <img class="img" style="width: 18em; height:24em; border:solid 3px white; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" src="{{asset('gambar-artikel/artikel-1645678594.png')}}" alt="Logo">
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-4 mb-3">
+                    <a href="http://umoocs.um.ac.id/">
+                      <img class="img" style="width: 18em; height:24em; border:solid 3px white; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" src="{{asset('gambar-artikel/artikel-1645678594.png')}}" alt="Logo">
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-4 mb-3">
+                    <a href="#">
+                      <img class="img" style="width: 18em; height:24em; border:solid 3px white; box-shadow: 9px 9px 12px rgba(0, 0, 0, 0.25);" src="{{asset('gambar-artikel/artikel-1645678594.png')}}" alt="Logo">
+                    </a>
+                  </div>
                 </div>
 
             </div>
             <!-- End of section wrapper -->
           </div>
+          {{--  Ends of Product  --}}
 
+          {{--  Begin of Service  --}}
+          <div class="section section-description fp-auto-height-responsive service-section" data-section="service">
+            <!-- Begin of section wrapper -->
+            <div class="section-wrapper center-vh dir-col anim">
+              <!-- title -->
+              <div class="section-title text-center">
+                <h5 class="title-bg">Service</h5>
+                <h2 class="display-title anim-2 mb-5">Layanan DLI</h2>
+              </div>
+
+              {{--  Content  --}}
+              <div class="row justify-content-center container">
+                <a href="http://dli-eduventure.um.ac.id" class="col-12 col-sm-7 col-md-4 py-3 px-4 border rounded m-3" style="text-decoration:none; color:white">
+                    <div class="images text-center">
+                        <img class="img" style="width:10em; height:auto" src="{{asset('img/service/Logo_DLI_Eduventure_Warna.png')}}" alt="Foto">
+                    </div>
+                    <div class="text-body">
+                        <p>
+                            ini adalah penjelasan singkatnya
+                        </p>
+                    </div>
+                </a>
+                <a href="http://journal2.um.ac.id/index.php/jodli" class="col-12 col-sm-7 col-md-4 py-3 px-4 border rounded m-3" style="text-decoration:none; color:white">
+                    <div class="images text-center">
+                        <img class="img" style="width:10em; height:auto" src="{{asset('img/service/logo joldi.png')}}" alt="Foto">
+                    </div>
+                    <div class="text-body">
+                        <p>
+                            ini adalah penjelasan singkatnya
+                        </p>
+                    </div>
+                </a>
+                <a href="#" class="col-12 col-sm-7 col-md-4 py-3 px-4 border rounded m-3" style="text-decoration:none; color:white">
+                    <div class="images text-center">
+                        <img class="img" style="width:10em; height:auto" src="{{asset('img/service/logodli store.png')}}" alt="Foto">
+                    </div>
+                    <div class="text-body">
+                        <p>
+                            ini adalah penjelasan singkatnya
+                        </p>
+                    </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          {{--  Ending of Service  --}}
+
+          {{--  Begin of Contact  --}}
           <div class="section section-contact fp-auto-height-responsive no-slide-arrows " data-section="contact">
 
             <!-- begin of information slide -->
@@ -648,6 +863,7 @@
             <!-- end of message slide -->
 
           </div>
+          {{--  Ending of Contact  --}}
 
         </main>
 
@@ -655,8 +871,7 @@
           <!-- Left content -->
           <div class="footer-left">
             <p>
-              <img src="{{asset('/img/logoum.png')}}" style="width:60px" alt="">
-              <img src="{{asset('/img/logo-um copy.png')}}" style="width:60px" alt="">
+              <img src="{{asset('/img/logo um.png')}}" style="width:60px" alt="">
             </p>
           </div>
 
@@ -696,5 +911,9 @@
         <script src="{{asset('/js/main.js')}}"></script>
 
         <script src="{{asset('/js/particlejs/particles-init.js')}}"></script>
+
+        <script src="{{asset('js/popper.min.js')}}"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('js/owl.carousel.min.js')}}"></script>
       </body>
 </html>

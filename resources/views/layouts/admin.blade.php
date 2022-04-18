@@ -87,23 +87,49 @@
                         <!-- Begin of sidebar nav menu params class: text-only / icon-only-->
                         <nav class="navbar-sidebar">
                             <ul class="navbar-nav" id="qmenu">
+
+                                <!-- Split dropend button -->
+                                <li class="nav-item" data-menuanchor="about">
+                                    <div class="btn-group dropend">
+                                        <button type="button" class="btn p-0">
+                                            <i class="icon ion-information bg-dark"></i>
+                                            <span class="txt">Profile</span>
+                                        </button>
+                                        <button type="button" class="btn dropdown-toggle dropdown-toggle-split px-4" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="visually-hidden">Toggle Dropright</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="{{ url('/admin/about') }}">Information</a></li>
+                                            <li><a class="dropdown-item" href="#">Video</a></li>
+                                            <li><a class="dropdown-item" href="#">Office</a></li>
+                                            <li><a class="dropdown-item" href="{{ url('/admin/target') }}">Target</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                {{--
+                                <li class="nav-item" data-menuanchor="about">
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="true">
+                                            <i class="icon ion-information bg-dark"></i>
+                                            <span class="txt">Profile</span>
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="{{ url('/admin/about') }}">Information</a></li>
+                                            <li><a class="dropdown-item" href="#">Video</a></li>
+                                            <li><a class="dropdown-item" href="#">Office</a></li>
+                                            <li><a class="dropdown-item" href="{{ url('/admin/target') }}">Target</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                --}}
+
                                 <li class="nav-item" data-menuanchor="article">
                                     <a href="{{ url('/admin/artikel') }}">
                                     <i class="icon ion-ios-book bg-dark"></i>
                                     <span class="txt">Article</span>
                                     </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="about">
-                                <a href="{{ url('/admin/about') }}">
-                                    <i class="icon ion-information bg-dark"></i>
-                                    <span class="txt">About</span>
-                                </a>
-                                </li>
-                                <li class="nav-item" data-menuanchor="target_ae">
-                                <a href="{{ url('/admin/target') }}">
-                                    <i class="icon ion-checkmark-circled bg-dark"></i>
-                                    <span class="txt">Target</span>
-                                </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="research">
                                 <a href="{{ url('/admin/research') }}">
@@ -124,17 +150,23 @@
                                     </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="roadmap">
-                                <a href="{{ url('/admin/roadmap') }}">
-                                    <i class="icon ion-flag bg-dark"></i>
-                                    <span class="txt">Roadmap</span>
-                                </a>
+                                    <a href="{{ url('/admin/roadmap') }}">
+                                        <i class="icon ion-flag bg-dark"></i>
+                                        <span class="txt">Roadmap</span>
+                                    </a>
                                 </li>
                                 </li>
                                 <li class="nav-item" data-menuanchor="products">
-                                <a href="{{ url('/admin/product')}}">
-                                    <i class="icon ion-ios-lightbulb-outline bg-dark"></i>
-                                    <span class="txt">Products</span>
-                                </a>
+                                    <a href="{{ url('/admin/product')}}">
+                                        <i class="icon ion-ios-lightbulb-outline bg-dark"></i>
+                                        <span class="txt">Products</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" data-menuanchor="service">
+                                    <a href="">
+                                        <i class="icon ion-ios-paper-outline bg-dark"></i>
+                                        <span class="txt">Service</span>
+                                    </a>
                                 </li>
                                 <li class="nav-item" data-menuanchor="contact">
                                 <a href="{{ url('/admin/contact')}}">
